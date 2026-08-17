@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ENOT: Fast Neural Optimal Transport — Maksim Bobrin</title>
+  <meta name="description" content="A concise explanation of ENOT and how expectile regularization makes neural optimal transport stable and fast.">
+  <link rel="canonical" href="https://maxsbob.github.io/blog/enot/">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/assets/images/favicon-192x192.png">
+  <meta property="og:type" content="article"><meta property="og:site_name" content="Maksim Bobrin"><meta property="og:title" content="ENOT: Fast neural optimal transport through expectile regularization"><meta property="og:description" content="Why approximating the c-transform is difficult—and how expectile regularization makes neural optimal transport stable and fast."><meta property="og:url" content="https://maxsbob.github.io/blog/enot/"><meta property="og:image" content="https://maxsbob.github.io/assets/images/raccoon-transport.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Arvo:wght@400&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"ScholarlyArticle","headline":"ENOT: Fast neural optimal transport through expectile regularization","author":{"@type":"Person","name":"Maksim Bobrin"},"url":"https://maxsbob.github.io/blog/enot/","about":"Neural optimal transport"}</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><div class="nav-shell"><a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span>Maksim Bobrin</a><nav class="site-nav" aria-label="Main navigation"><a href="/publications/">Publications</a><a href="/blog/" aria-current="page">Blog</a><a href="/projects/">Projects</a><a href="https://github.com/maxsbob" rel="me">GitHub</a></nav></div></header>
+  <main id="main">
+    <header class="article-header"><div class="container article-header-inner"><p class="eyebrow">Paper notes · ENOT</p><h1>Fast neural optimal transport through expectile regularization</h1><p class="article-deck">Why approximating the <em>c</em>-transform is difficult—and how expectile regularization makes neural optimal transport stable and fast.</p><p class="article-meta">NeurIPS 2024 Spotlight</p></div></header>
+    <div class="container article-layout">
+      <aside class="article-toc" aria-label="On this page"><p>On this page</p><a href="#bottleneck">The bottleneck</a><a href="#idea">The key idea</a><a href="#practice">What changes</a><a href="#resources">Resources</a></aside>
+      <article class="article-body">
+        <h2 id="bottleneck">The bottleneck</h2>
+        <p>Neural optimal transport methods learn a transport map between probability distributions. In existing solvers, much of the difficulty comes from finding a near-exact approximation of the conjugate operator, also called the <em>c</em>-transform.</p>
+        <p>That approximation is commonly obtained either through non-convex max–min optimization or through computationally intensive fine-tuning of an initial prediction. The former can be unstable; the latter makes training slow.</p>
+
+        <h2 id="idea">The key idea</h2>
+        <p>ENOT introduces a theoretically justified loss based on expectile regularization. The regularizer places binding conditions on the learned dual potentials and provides an upper-bound estimate over the distribution of possible conjugate potentials.</p>
+        <div class="callout"><p>The practical goal is simple: keep the neural approximation close to the true conjugate potential without repeatedly solving an expensive inner optimization problem.</p></div>
+        <p>Expectiles summarize a random variable through asymmetric least squares. By penalizing overly optimistic approximations of the conjugate Kantorovich potential, the regularizer encourages the learned potential to stay close to the true conjugate.</p>
+
+        <h2 id="practice">What changes in practice</h2>
+        <p>The resulting learning process is stable and eliminates the need for extensive additional fine-tuning. On established Wasserstein-2 benchmark tasks, the paper reports up to a three-fold improvement in quality and up to a ten-fold improvement in runtime over prior state-of-the-art approaches.</p>
+        <p>The work also evaluates ENOT with several cost functions and tasks, including image generation, to demonstrate the method’s generalizability and robustness. An implementation is available through the OTT-JAX library tutorial.</p>
+
+        <h2 id="resources">Read the paper and try ENOT</h2>
+        <p>For the full derivation, experiments, and visual comparisons, use the original project page and paper resources.</p>
+        <div class="button-row"><a class="button button-primary" href="https://maxsbob.github.io/enot/">Project page <svg class="arrow-icon" aria-hidden="true" viewBox="0 0 16 16" fill="none"><path d="M3 13 13 3M6 3h7v7" stroke="currentColor" stroke-width="1.6"/></svg></a><a class="button" href="https://arxiv.org/abs/2403.03777">arXiv</a><a class="button" href="https://openreview.net/forum?id=4DA5vaPHFb">OpenReview</a><a class="button" href="https://ott-jax.readthedocs.io/tutorials/neural/300_ENOT.html">OTT-JAX library</a></div>
+      </article>
+    </div>
+  </main>
+  <footer class="site-footer"><div class="container footer-inner"><p>© 2026 Maksim Bobrin</p><a href="/blog/">All posts</a></div></footer>
+</body>
+</html>
