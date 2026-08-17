@@ -14,11 +14,9 @@
   <meta property="og:title" content="Maksim Bobrin — Research and Publications">
   <meta property="og:description" content="Research papers, project pages, and notes on neural optimal transport and machine learning.">
   <meta property="og:url" content="https://maxsbob.github.io/">
-  <meta property="og:image" content="https://maxsbob.github.io/assets/images/raccoon-transport.png">
-  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Maksim Bobrin — Research and Publications">
   <meta name="twitter:description" content="Research papers, project pages, and notes on neural optimal transport and machine learning.">
-  <meta name="twitter:image" content="https://maxsbob.github.io/assets/images/raccoon-transport.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Arvo:wght@400&amp;display=swap" rel="stylesheet">
@@ -36,8 +34,7 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
-    <div class="nav-shell">
-      <a class="brand" href="/" aria-label="Maksim Bobrin, home"><span class="brand-mark" aria-hidden="true"></span>Maksim Bobrin</a>
+    <div class="nav-shell nav-shell-end">
       <nav class="site-nav" aria-label="Main navigation">
         <a href="/publications/">Publications</a>
         <a href="/blog/">Blog</a>
@@ -47,46 +44,88 @@
     </div>
   </header>
 
-  <main id="main">
-    <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <p class="eyebrow">Research · Machine learning</p>
-          <h1>Maksim<br>Bobrin</h1>
-          <p class="hero-copy">Research notes, papers, and project pages on neural optimal transport and machine learning.</p>
-          <div class="button-row">
-            <a class="button button-primary" href="/publications/">View publications <svg class="arrow-icon" aria-hidden="true" viewBox="0 0 16 16" fill="none"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="square" stroke-linejoin="miter"/></svg></a>
-            <a class="button" href="https://maxsbob.github.io/enot/">Visit the ENOT project <svg class="arrow-icon" aria-hidden="true" viewBox="0 0 16 16" fill="none"><path d="M3 13 13 3M6 3h7v7" stroke="currentColor" stroke-width="1.6"/></svg></a>
-          </div>
+  <main id="main" class="home-main">
+    <div class="container home-split">
+      <section class="profile-pane" aria-labelledby="profile-name">
+        <div class="profile-identity">
+          <h1 id="profile-name">Maksim Bobrin</h1>
+          <nav class="profile-links" aria-label="Profiles and contact links">
+          <a href="https://github.com/maxsbob" aria-label="GitHub" title="GitHub" rel="me noopener noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297A12 12 0 0 0 8.205 23.68c.6.113.82-.258.82-.577l-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22l-.015 3.286c0 .315.21.69.825.57A12 12 0 0 0 12 .297Z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/maksim-bobrin/" aria-label="LinkedIn" title="LinkedIn" rel="me noopener noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="0.75" y="0.75" width="22.5" height="22.5" rx="1.5"/><path class="icon-cutout" d="M19.05 19.1h-3.12v-4.9c0-1.17-.02-2.67-1.63-2.67-1.63 0-1.88 1.27-1.88 2.59v4.98H9.3V9.02h3v1.37h.04a3.29 3.29 0 0 1 2.96-1.63c3.17 0 3.75 2.08 3.75 4.8v5.54ZM5.78 7.65a1.81 1.81 0 1 1 0-3.62 1.81 1.81 0 0 1 0 3.62ZM4.22 9.02h3.12V19.1H4.22V9.02Z"/></svg>
+          </a>
+          <a href="https://scholar.google.com/citations?user=8vy8vqgAAAAJ&amp;hl=en" aria-label="Google Scholar" title="Google Scholar" rel="me noopener noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.242 13.769 0 9.5 12 0l12 9.5-5.242 4.269A7.49 7.49 0 0 0 12 9.5a7.49 7.49 0 0 0-6.758 4.269ZM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14Z"/></svg>
+          </a>
+          <a href="https://x.com/maxsbob21" aria-label="X" title="X" rel="me noopener noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993l-9.508-13.838Zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182l-6.327-9.05Z"/></svg>
+          </a>
+          </nav>
         </div>
-        <img class="hero-art" src="/assets/images/raccoon-transport.png" alt="Ink illustration of a raccoon tracing optimal transport paths between two distributions" width="1536" height="1024">
-      </div>
-    </section>
+      </section>
 
-    <section class="section">
-      <div class="container">
-        <div class="section-heading">
-          <div><p class="kicker">Selected work</p><h2>Recent publication</h2></div>
-          <a class="text-link" href="/publications/">All publications <svg class="arrow-icon" aria-hidden="true" viewBox="0 0 16 16" fill="none"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" stroke="currentColor" stroke-width="1.6"/></svg></a>
+      <section class="home-publications" aria-labelledby="publications-heading">
+        <div class="compact-heading">
+          <h2 id="publications-heading">Publications</h2>
+          <a class="text-link" href="https://scholar.google.com/citations?user=8vy8vqgAAAAJ&amp;hl=en">Google Scholar <svg class="arrow-icon" aria-hidden="true" viewBox="0 0 16 16" fill="none"><path d="M3 13 13 3M6 3h7v7" stroke="currentColor" stroke-width="1.6"/></svg></a>
         </div>
-        <article class="work-row">
-          <div class="work-year">2024</div>
-          <div class="work-main">
-            <span class="spotlight">NeurIPS 2024 Spotlight</span>
-            <h3>ENOT: Expectile Regularization for Fast and Accurate Training of Neural Optimal Transport</h3>
-            <p class="authors">Nazar Buzun, Maksim Bobrin, Dmitry V. Dylov</p>
-            <div class="link-row">
-              <a href="https://arxiv.org/abs/2403.03777">arXiv</a>
-              <a href="https://openreview.net/forum?id=4DA5vaPHFb">OpenReview</a>
-              <a href="https://maxsbob.github.io/enot/">Project page</a>
-              <a href="/blog/enot/">Blog post</a>
-              <a href="https://ott-jax.readthedocs.io/tutorials/neural/300_ENOT.html">OTT-JAX library</a>
-            </div>
-          </div>
-          <a class="button row-action" href="https://maxsbob.github.io/enot/">Explore ENOT <svg class="arrow-icon" aria-hidden="true" viewBox="0 0 16 16" fill="none"><path d="M3 13 13 3M6 3h7v7" stroke="currentColor" stroke-width="1.6"/></svg></a>
-        </article>
-      </div>
-    </section>
+
+        <div class="publication-list">
+          <article class="publication-item">
+            <div class="publication-year">2026</div>
+            <div class="publication-content"><h3 class="publication-title"><a href="https://arxiv.org/abs/2602.01962">Zero-Shot Off-Policy Learning</a></h3><p class="publication-meta">A. Asadulaev,&ensp;<strong class="author-self">M. Bobrin<sup class="equal-contribution-mark" aria-label="shared first author">*</sup></strong>,&ensp;S. Lahlou,&ensp;D. Dylov,&ensp;F. Karray,&ensp;M. Takáč</p><p class="publication-venue"><span class="venue-mark">ICML 2026</span></p><div class="publication-links"><a href="https://arxiv.org/abs/2602.01962">Paper</a></div></div>
+          </article>
+
+          <article class="publication-item">
+            <div class="publication-year">2026</div>
+            <div class="publication-content"><h3 class="publication-title"><a href="https://arxiv.org/abs/2606.04188">Dual Advantage Fields</a></h3><p class="publication-meta">A. Zemtsov,&ensp;<strong class="author-self">M. Bobrin</strong>,&ensp;A. Nikulin,&ensp;D. V. Dylov,&ensp;et al.</p><p class="publication-venue">arXiv:2606.04188</p><div class="publication-links"><a href="https://arxiv.org/abs/2606.04188">Paper</a></div></div>
+          </article>
+
+          <article class="publication-item">
+            <div class="publication-year">2026</div>
+            <div class="publication-content"><h3 class="publication-title"><a href="https://arxiv.org/abs/2605.29906">Plan, Don't Pose: Long Composite Motion Generation with Text-Aligned BFM</a></h3><p class="publication-meta">N. Shvetsov,&ensp;<strong class="author-self">M. Bobrin</strong>,&ensp;N. Buzun,&ensp;A. Bozhedarov,&ensp;D. V. Dylov</p><p class="publication-venue">arXiv:2605.29906</p><div class="publication-links"><a href="https://arxiv.org/abs/2605.29906">Paper</a></div></div>
+          </article>
+
+          <article class="publication-item">
+            <div class="publication-year">2026</div>
+            <div class="publication-content"><h3 class="publication-title"><a href="https://arxiv.org/abs/2605.23395">Convex Compositional Reasoning Models</a></h3><p class="publication-meta">M. Roketlishvili,&ensp;S. Semenov,&ensp;<strong class="author-self">M. Bobrin</strong>,&ensp;et al.</p><p class="publication-venue">arXiv:2605.23395</p><div class="publication-links"><a href="https://arxiv.org/abs/2605.23395">Paper</a></div></div>
+          </article>
+
+          <article class="publication-item">
+            <div class="publication-year">2025</div>
+            <div class="publication-content"><h3 class="publication-title"><a href="https://arxiv.org/abs/2505.13150">Zero-Shot Adaptation of Behavioral Foundation Models to Unseen Dynamics</a></h3><p class="publication-meta"><strong class="author-self">M. Bobrin</strong>,&ensp;I. Zisman,&ensp;A. Nikulin,&ensp;V. Kurenkov,&ensp;D. Dylov</p><p class="publication-venue"><span class="venue-mark">ICLR 2026</span></p><div class="publication-links"><a href="https://arxiv.org/abs/2505.13150">Paper</a><a href="https://openreview.net/forum?id=1jonPSrREu">OpenReview</a></div></div>
+          </article>
+
+          <article class="publication-item">
+            <div class="publication-year">2025</div>
+            <div class="publication-content"><h3 class="publication-title"><a href="https://arxiv.org/abs/2509.21351">Random Direct Preference Optimization for Radiography Report Generation</a></h3><p class="publication-meta">V. Samokhin,&ensp;B. Shirokikh,&ensp;M. Goncharov,&ensp;D. Umerenkov,&ensp;<strong class="author-self">M. Bobrin</strong>,&ensp;et al.</p><p class="publication-venue">MICCAI 2025 Workshop on Foundation Models for General Medical AI</p><div class="publication-links"><a href="https://arxiv.org/abs/2509.21351">Paper</a></div></div>
+          </article>
+
+          <article class="publication-item">
+            <div class="publication-year">2025</div>
+            <div class="publication-content"><h3 class="publication-title"><a href="https://arxiv.org/abs/2507.17513">HOTA: Hamiltonian Framework for Optimal Transport Advection</a></h3><p class="publication-meta">N. Buzun,&ensp;D. Shlenskii,&ensp;<strong class="author-self">M. Bobrin</strong>,&ensp;D. V. Dylov</p><p class="publication-venue"><span class="venue-mark">ICLR 2026</span></p><div class="publication-links"><a href="https://arxiv.org/abs/2507.17513">Paper</a></div></div>
+          </article>
+
+          <article class="publication-item">
+            <div class="publication-year">2024</div>
+            <div class="publication-content"><h3 class="publication-title"><a href="https://arxiv.org/abs/2409.16626">Ascend HiFloat8 Format for Deep Learning</a></h3><p class="publication-meta">Y. Luo,&ensp;Z. Zhang,&ensp;R. Wu,&ensp;H. Liu,&ensp;…,&ensp;<strong class="author-self">M. Bobrin</strong>,&ensp;et al.</p><p class="publication-venue">arXiv:2409.16626</p><div class="publication-links"><a href="https://arxiv.org/abs/2409.16626">Paper</a></div></div>
+          </article>
+
+          <article class="publication-item publication-item-featured">
+            <div class="publication-year">2024</div>
+            <div class="publication-content"><span class="publication-badge">Spotlight paper</span><h3 class="publication-title"><a href="https://arxiv.org/abs/2403.03777">ENOT: Expectile Regularization for Fast and Accurate Training of Neural Optimal Transport</a></h3><p class="publication-meta">N. Buzun,&ensp;<strong class="author-self">M. Bobrin<sup class="equal-contribution-mark" aria-label="shared first author">*</sup></strong>,&ensp;D. V. Dylov</p><p class="publication-venue"><span class="venue-mark">NeurIPS 2024 · Spotlight</span></p><div class="publication-links"><a href="https://arxiv.org/abs/2403.03777">Paper</a><a href="https://openreview.net/forum?id=4DA5vaPHFb">OpenReview</a><a href="https://maxsbob.github.io/enot/">Project</a><a href="/blog/enot/">Blog</a><a href="https://ott-jax.readthedocs.io/tutorials/neural/300_ENOT.html">OTT-JAX</a></div></div>
+          </article>
+
+          <article class="publication-item">
+            <div class="publication-year">2024</div>
+            <div class="publication-content"><h3 class="publication-title"><a href="https://arxiv.org/abs/2402.13037">Align Your Intents: Offline Imitation Learning via Optimal Transport</a></h3><p class="publication-meta"><strong class="author-self">M. Bobrin</strong>,&ensp;N. Buzun,&ensp;D. Krylov,&ensp;D. V. Dylov</p><p class="publication-venue">arXiv:2402.13037</p><div class="publication-links"><a href="https://arxiv.org/abs/2402.13037">Paper</a></div></div>
+          </article>
+        </div>
+        <p class="publication-note"><sup aria-hidden="true">*</sup> Shared first author</p>
+      </section>
+    </div>
   </main>
 
   <footer class="site-footer">
