@@ -159,13 +159,15 @@ button:focus-visible {
 h1,
 h2,
 h3,
+h4,
 p {
   margin-top: 0;
 }
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
   font-family: var(--heading-font);
   text-wrap: balance;
 }
@@ -244,10 +246,6 @@ h3 {
   width: min(760px, 120%);
   max-width: none;
   margin-right: -12%;
-}
-
-.home-main {
-  border-bottom: 1px solid var(--rule);
 }
 
 .home-split {
@@ -336,6 +334,45 @@ h3 {
 
 .publication-list {
   border-bottom: 1px solid var(--rule);
+}
+
+.home-publications .publication-list {
+  border-bottom: 0;
+}
+
+.publication-year-group + .publication-year-group {
+  margin-top: 2.35rem;
+}
+
+.publication-year-heading {
+  display: grid;
+  grid-template-columns: auto minmax(40px, 1fr);
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.publication-year-heading::after {
+  height: 1px;
+  background: linear-gradient(90deg, var(--accent) 0, var(--rule) 40%, transparent 100%);
+  content: "";
+}
+
+.publication-year-heading h3 {
+  margin: 0;
+  color: var(--ink);
+  font-size: 1.45rem;
+  font-weight: 780;
+  letter-spacing: -0.045em;
+  line-height: 1;
+}
+
+.home-publications .publication-year-group .publication-item {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.home-publications .publication-year-group .publication-item-with-thumbnail {
+  grid-template-columns: minmax(0, 1fr) 104px;
 }
 
 .publication-item {
@@ -897,6 +934,14 @@ h3 {
   .home-publications .publication-item-with-thumbnail {
     grid-template-columns: 42px minmax(0, 1fr) 76px;
     gap: 0.65rem;
+  }
+
+  .home-publications .publication-year-group .publication-item {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .home-publications .publication-year-group .publication-item-with-thumbnail {
+    grid-template-columns: minmax(0, 1fr) 76px;
   }
 
   .publication-thumbnail {
