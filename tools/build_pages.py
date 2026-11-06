@@ -8,6 +8,7 @@ slides_version = __import__('hashlib').sha256((out/slides_path).read_bytes()).he
 slides_url = slides_path + '?v=' + slides_version
 
 name = 'Maksim Bobrin'
+description = 'PhD student, Researcher'
 nav = [('Home','index.html'),('Talks','talks.html')]
 profiles = [
     ('linkedin', 'LinkedIn', 'https://www.linkedin.com/in/maksim-bobrin'),
@@ -16,6 +17,8 @@ profiles = [
 ]
 
 def page(filename, title, active, content, scripts=''):
+    page_title = name if filename == 'index.html' else title + ' · ' + name
+    page_url = 'https://maxsbob.github.io/' + ('' if filename == 'index.html' else filename)
     links = []
     for label, href in nav:
         current = ' aria-current="page"' if href == active else ''
@@ -33,8 +36,15 @@ def page(filename, title, active, content, scripts=''):
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light">
   <meta name="theme-color" content="#ffffff">
-  <meta name="description" content="Research, publications, and talks by Maksim Bobrin.">
-  <title>{name if filename == 'index.html' else escape(title) + ' · ' + name}</title>
+  <meta name="description" content="{escape(description, quote=True)}">
+  <meta property="og:title" content="{escape(page_title, quote=True)}">
+  <meta property="og:description" content="{escape(description, quote=True)}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{page_url}">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="{escape(page_title, quote=True)}">
+  <meta name="twitter:description" content="{escape(description, quote=True)}">
+  <title>{escape(page_title)}</title>
   <link rel="stylesheet" href="{styles_url}">
   {scripts}
 </head>
