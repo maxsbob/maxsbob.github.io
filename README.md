@@ -2,7 +2,7 @@
 
 Live at [maxsbob.github.io](https://maxsbob.github.io/).
 
-GitHub Pages publishes the committed website from the **main branch, repository root**.
+GitHub Actions builds and publishes the website to GitHub Pages from the **main branch**.
 After editing content, regenerate the HTML, run the checks below, then commit and push.
 The previous homepage is preserved in branch **backup/site-before-2026-11-06**.
 
@@ -40,8 +40,7 @@ git commit -m "Update website"
 git push
 ~~~
 
-GitHub Pages deploys main automatically. The validation workflow checks source consistency and local links.
-The optional Publish GitHub Pages workflow is for a future switch to the GitHub Actions publishing source; it is not needed for the current branch-based setup.
+The Publish GitHub Pages workflow regenerates pages, checks local links, and deploys main automatically. The separate validation workflow also checks that committed HTML matches its editable sources. Manual publication is available through Actions → Publish GitHub Pages → Run workflow.
 
 Legacy project pages and blog articles remain available at their existing URLs. The old /publications/ archive redirects to the homepage's Publications section.
 The site is self-contained and does not depend on the Sites preview host.
