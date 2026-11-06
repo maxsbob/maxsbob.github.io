@@ -2,6 +2,7 @@ from pathlib import Path
 from html import escape
 
 out = Path(__file__).resolve().parents[1]
+styles_url = 'assets/site.css?v=' + __import__('hashlib').sha256((out/'assets/site.css').read_bytes()).hexdigest()[:12]
 slides_path = 'assets/slides/generative-modelling-itmo-2026.pdf'
 slides_version = __import__('hashlib').sha256((out/slides_path).read_bytes()).hexdigest()[:12]
 slides_url = slides_path + '?v=' + slides_version
@@ -34,7 +35,7 @@ def page(filename, title, active, content, scripts=''):
   <meta name="theme-color" content="#ffffff">
   <meta name="description" content="Research, publications, and talks by Maksim Bobrin.">
   <title>{name if filename == 'index.html' else escape(title) + ' · ' + name}</title>
-  <link rel="stylesheet" href="assets/site.css">
+  <link rel="stylesheet" href="{styles_url}">
   {scripts}
 </head>
 <body>
@@ -45,7 +46,10 @@ def page(filename, title, active, content, scripts=''):
   <div class="layout">
     <aside class="profile" aria-label="Researcher profile">
       {name_html}
-      <img class="portrait" src="assets/maksim-bobrin.png" alt="Maksim Bobrin by the sea" width="1086" height="1448" fetchpriority="high">
+      <picture>
+        <source type="image/webp" srcset="assets/portrait-180.webp 180w, assets/portrait-360.webp 360w, assets/portrait-540.webp 540w" sizes="(max-width: 640px) 152px, (pointer: coarse) and (orientation: landscape) and (max-height: 500px) and (max-width: 960px) 152px, 180px">
+        <img class="portrait" src="assets/portrait-360.jpg" alt="Maksim Bobrin by the sea" width="360" height="450" fetchpriority="high" decoding="async">
+      </picture>
       <ul class="profiles" aria-label="Profiles">{profile_items}</ul>
     </aside>
     <div class="column">
@@ -87,11 +91,11 @@ def make_paper(p):
     else:
         venue=f'<span class="venue preprint">{mark}</span>'
     links=''.join(a(lbl,url) for lbl,url in [
-        ('arXiv' if 'arxiv.org' in p['url'] else 'Paper',p['url']),('PDF',p['pdf']),*p['links']])
+        ('arXiv' if 'arxiv.org' in p['url'] else 'Paper',p['url']),*p['links']])
     return f"""
       <article class="paper-row" id="{p['id']}">
         <div class="venue-line">{venue}</div>
-        <h5 class="paper-title">{escape(p['title'])}</h5>
+        <h5 class="paper-title">{a(p['title'],p['url'])}</h5>
         {auth_html}
         <div class="resources">{links}<details class="abstract"><summary>Summary</summary><p>{escape(p['summary'])}</p></details></div>
       </article>"""

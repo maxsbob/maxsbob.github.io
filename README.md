@@ -22,7 +22,7 @@ Open http://localhost:8000.
 - **Latest Updates** — edit updates.json, then run python3 tools/build_pages.py. Entries use date and label for the timeline, html for linked text, and sources for editorial references.
 - **Publications** — edit publications.json, then run the same command. The year controls the year group; type is conference, workshop, or preprint. Add shared first authors to shared_first_authors using the exact names in authors. Venue links are label/URL pairs in venue_links; workshops include a separate link to the parent conference.
 - **Profile links** — edit the profiles list in tools/build_pages.py and regenerate the HTML. Links are rendered directly in the page and work without JavaScript.
-- **Photo** — replace assets/maksim-bobrin.png. Its crop and display size are controlled by .portrait in assets/site.css.
+- **Photo** — replace assets/maksim-bobrin.png, then run `uv run --with pillow python tools/optimize_portrait.py` to regenerate the small WebP images and JPEG fallback. Pages select a size for the visitor’s screen and pixel density; the full-size PNG is never downloaded by the page. The crop and display size are controlled by tools/optimize_portrait.py and .portrait in assets/site.css.
 - **Fonts, colors, and spacing** — edit assets/site.css.
 - **Heading ornaments** — static SVGs in assets/math/ and assets/automata/.
 
