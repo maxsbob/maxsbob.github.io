@@ -1,0 +1,369 @@
+[
+  {
+    "key": "convex",
+    "id": "convex-compositional-reasoning",
+    "title": "Convex Compositional Reasoning Models",
+    "authors": [
+      "Meir Roketlishvili",
+      "Semyon Semenov",
+      "Maksim Bobrin",
+      "Viktor Kovalchuk",
+      "Albert Baichorov",
+      "Abduragim Shtanchaev",
+      "Fakhri Karray",
+      "Dmitry V. Dylov",
+      "Martin Takáč",
+      "Arip Asadulaev"
+    ],
+    "venue": "NeurIPS 2026",
+    "city": "Atlanta, USA",
+    "event": "https://neurips.cc/Conferences/2026",
+    "url": "https://openreview.net/forum?id=P8NrHa7X4l",
+    "pdf": "https://arxiv.org/pdf/2605.23395",
+    "summary": "Each local constraint contributes a convex energy function. Adding those functions keeps the overall problem convex, so a solver trained on small instances can tackle larger ones.",
+    "links": [],
+    "year": 2026,
+    "type": "conference",
+    "shared_first_authors": [],
+    "venue_links": [
+      [
+        "NeurIPS 2026",
+        "https://neurips.cc/Conferences/2026"
+      ]
+    ]
+  },
+  {
+    "key": "off",
+    "id": "zero-shot-off-policy",
+    "title": "Zero-Shot Off-Policy Learning",
+    "authors": [
+      "Arip Asadulaev",
+      "Maksim Bobrin",
+      "Salem Lahlou",
+      "Dmitry V. Dylov",
+      "Fakhri Karray",
+      "Martin Takáč"
+    ],
+    "venue": "ICML 2026",
+    "city": "Seoul, South Korea",
+    "event": "https://icml.cc/Conferences/2026",
+    "url": "https://proceedings.mlr.press/v306/asadulaev26b.html",
+    "pdf": "https://arxiv.org/pdf/2602.01962",
+    "summary": "A connection between successor measures and density ratios lets an agent correct for the distribution of its offline data when a new task arrives.",
+    "links": [
+      [
+        "Code",
+        "https://github.com/machinestein/Zero-Shot-Off-Policy-Learning"
+      ]
+    ],
+    "year": 2026,
+    "type": "conference",
+    "shared_first_authors": [
+      "Arip Asadulaev",
+      "Maksim Bobrin"
+    ],
+    "authorship_source": "https://arxiv.org/pdf/2602.01962#page=1",
+    "venue_links": [
+      [
+        "ICML 2026",
+        "https://icml.cc/Conferences/2026"
+      ]
+    ]
+  },
+  {
+    "key": "fields",
+    "id": "dual-advantage-fields",
+    "title": "Dual Advantage Fields",
+    "authors": [
+      "Alexey Zemtsov",
+      "Maxim Bobrin",
+      "Alexander Nikulin",
+      "Dmitry V. Dylov",
+      "Fakhri Karray",
+      "Vladislav Kurenkov",
+      "Martin Takáč",
+      "Arip Asadulaev"
+    ],
+    "venue": "Offline-to-Online Workshop · ICML 2026",
+    "city": "Seoul, South Korea",
+    "event": "https://decision-making-offline2online-icml2026.github.io/",
+    "url": "https://arxiv.org/abs/2606.04188",
+    "pdf": "https://arxiv.org/pdf/2606.04188",
+    "summary": "The model predicts how each action moves the state representation. It ranks actions by how closely those changes align with the goal direction.",
+    "links": [],
+    "year": 2026,
+    "type": "workshop",
+    "shared_first_authors": [],
+    "venue_links": [
+      [
+        "Offline-to-Online Workshop",
+        "https://decision-making-offline2online-icml2026.github.io/"
+      ],
+      [
+        "ICML 2026",
+        "https://icml.cc/Conferences/2026"
+      ]
+    ]
+  },
+  {
+    "key": "motion",
+    "id": "plan-dont-pose",
+    "title": "Plan, Don't Pose: Long Composite Motion Generation with Text-Aligned BFM",
+    "authors": [
+      "Nikolay Shvetsov",
+      "Maksim Bobrin",
+      "Nazar Buzun",
+      "Anton Bozhedarov",
+      "Dmitry V. Dylov"
+    ],
+    "venue": "SPIGM Workshop · ICML 2026",
+    "city": "Seoul, South Korea",
+    "event": "https://spigmworkshop2026.github.io/",
+    "url": "https://arxiv.org/abs/2605.29906",
+    "pdf": "https://arxiv.org/pdf/2605.29906",
+    "summary": "Text2BFM translates a description into a sequence of latent behaviors. A frozen behavioral foundation model executes the sequence as motion.",
+    "links": [
+      [
+        "Workshop paper",
+        "https://openreview.net/forum?id=wt8N5gegq1"
+      ]
+    ],
+    "year": 2026,
+    "type": "workshop",
+    "shared_first_authors": [],
+    "venue_links": [
+      [
+        "SPIGM Workshop",
+        "https://spigmworkshop2026.github.io/"
+      ],
+      [
+        "ICML 2026",
+        "https://icml.cc/Conferences/2026"
+      ]
+    ]
+  },
+  {
+    "key": "dyn",
+    "id": "zero-shot-adaptation",
+    "title": "Zero-Shot Adaptation of Behavioral Foundation Models to Unseen Dynamics",
+    "authors": [
+      "Maksim Bobrin",
+      "Ilya Zisman",
+      "Alexander Nikulin",
+      "Vladislav Kurenkov",
+      "Dmitry Dylov"
+    ],
+    "venue": "ICLR 2026",
+    "city": "Rio de Janeiro, Brazil",
+    "event": "https://iclr.cc/Conferences/2026",
+    "url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/cd7fe6d521c3fc74c5363a7e29f47910-Abstract-Conference.html",
+    "pdf": "https://arxiv.org/pdf/2505.13150",
+    "summary": "A transformer infers the current dynamics from recent interactions. Conditioning the policy on that belief lets it adapt when the environment changes.",
+    "links": [
+      [
+        "Project",
+        "https://belief-fb.dunnolab.ai/"
+      ]
+    ],
+    "year": 2026,
+    "type": "conference",
+    "shared_first_authors": [],
+    "venue_links": [
+      [
+        "ICLR 2026",
+        "https://iclr.cc/Conferences/2026"
+      ]
+    ]
+  },
+  {
+    "key": "hota",
+    "id": "hota",
+    "title": "HOTA: Hamiltonian framework for Optimal Transport Advection",
+    "authors": [
+      "Nazar Buzun",
+      "Daniil Shlenskii",
+      "Maksim Bobrin",
+      "Dmitry Dylov"
+    ],
+    "venue": "ICLR 2026",
+    "city": "Rio de Janeiro, Brazil",
+    "event": "https://iclr.cc/Conferences/2026",
+    "url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/8911a007b983c6a4c33fcf03630fa107-Abstract-Conference.html",
+    "pdf": "https://arxiv.org/pdf/2507.17513",
+    "summary": "HOTA learns potentials that guide trajectories between two distributions. It can account for the geometry of the space without fitting intermediate probability densities.",
+    "links": [
+      [
+        "Code",
+        "https://github.com/nazarblch/HOTA"
+      ]
+    ],
+    "year": 2026,
+    "type": "conference",
+    "shared_first_authors": [],
+    "venue_links": [
+      [
+        "ICLR 2026",
+        "https://iclr.cc/Conferences/2026"
+      ]
+    ]
+  },
+  {
+    "key": "rdpo",
+    "id": "random-dpo",
+    "title": "Random Direct Preference Optimization for Radiography Report Generation",
+    "authors": [
+      "Valentin Samokhin",
+      "Boris Shirokikh",
+      "Mikhail Goncharov",
+      "Dmitriy Umerenkov",
+      "Maksim Bobrin",
+      "Ivan Oseledets",
+      "Dmitry Dylov",
+      "Mikhail Belyaev"
+    ],
+    "venue": "MedAGI Workshop · MICCAI 2025",
+    "city": "Daejeon, South Korea",
+    "event": "https://medagi2025.github.io/",
+    "url": "https://link.springer.com/chapter/10.1007/978-3-032-07845-2_17",
+    "pdf": "https://arxiv.org/pdf/2509.21351",
+    "summary": "A matching radiology report and a randomly sampled alternative form a preference pair for training, without new human rankings.",
+    "links": [],
+    "year": 2025,
+    "type": "workshop",
+    "shared_first_authors": [],
+    "venue_links": [
+      [
+        "MedAGI Workshop",
+        "https://medagi2025.github.io/"
+      ],
+      [
+        "MICCAI 2025",
+        "https://conferences.miccai.org/2025/"
+      ]
+    ]
+  },
+  {
+    "key": "enot",
+    "id": "enot",
+    "title": "Expectile Regularization for Fast and Accurate Training of Neural Optimal Transport",
+    "authors": [
+      "Nazar Buzun",
+      "Maksim Bobrin",
+      "Dmitry V. Dylov"
+    ],
+    "venue": "NeurIPS 2024 · Spotlight",
+    "city": "Vancouver, Canada",
+    "event": "https://neurips.cc/Conferences/2024",
+    "url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/d885c74aa0e00cc07a35346aa7988e34-Abstract-Conference.html",
+    "pdf": "https://arxiv.org/pdf/2403.03777",
+    "summary": "An asymmetric loss couples the two transport potentials during training, removing the need for a costly inner optimization.",
+    "links": [
+      [
+        "Slides",
+        "https://neurips.cc/media/neurips-2024/Slides/96684_uqR9Gw5.pdf"
+      ],
+      [
+        "Tutorial",
+        "https://ott-jax.readthedocs.io/tutorials/neural/300_ENOT.html"
+      ]
+    ],
+    "year": 2024,
+    "type": "conference",
+    "shared_first_authors": [
+      "Nazar Buzun",
+      "Maksim Bobrin"
+    ],
+    "authorship_source": "https://arxiv.org/pdf/2403.03777#page=1",
+    "venue_links": [
+      [
+        "NeurIPS 2024",
+        "https://neurips.cc/Conferences/2024"
+      ]
+    ]
+  },
+  {
+    "key": "fenchel",
+    "id": "fenchel-tilting",
+    "title": "Fenchel Tilting: Weighted Correction for Efficient Finetuning of Generative Models",
+    "authors": [
+      "Maksim Bobrin",
+      "Maksim Zhdanov",
+      "Dmitry Dylov"
+    ],
+    "venue": "arXiv preprint · 2026",
+    "city": "",
+    "event": null,
+    "url": "https://arxiv.org/abs/2609.40030",
+    "pdf": "https://arxiv.org/pdf/2609.40030",
+    "summary": "First estimate how much each sample should count under the target preference. Then hold those weights fixed while fitting the generative model.",
+    "links": [],
+    "year": 2026,
+    "type": "preprint",
+    "shared_first_authors": [],
+    "venue_links": []
+  },
+  {
+    "key": "hifloat",
+    "id": "ascend-hifloat8",
+    "title": "Ascend HiFloat8 Format for Deep Learning",
+    "authors": [
+      "Yuanyong Luo",
+      "Zhongxing Zhang",
+      "Richard Wu",
+      "Hu Liu",
+      "Ying Jin",
+      "Kai Zheng",
+      "Minmin Wang",
+      "Zhanying He",
+      "Guipeng Hu",
+      "Luyao Chen",
+      "Tianchi Hu",
+      "Junsong Wang",
+      "Minqi Chen",
+      "Mikhaylov Dmitry",
+      "Korviakov Vladimir",
+      "Bobrin Maxim",
+      "Yuhao Hu",
+      "Guanfu Chen",
+      "Zeyi Huang"
+    ],
+    "venue": "White paper · 2024",
+    "city": "",
+    "event": null,
+    "url": "https://arxiv.org/abs/2409.16626",
+    "pdf": "https://arxiv.org/pdf/2409.16626",
+    "summary": "HiFloat8 varies the precision of the mantissa across exponent ranges to balance numerical precision and dynamic range within eight bits.",
+    "links": [
+      [
+        "Documentation",
+        "https://hifloat.gccorg.com/docs/en/hifloat8/white_paper/ascend_hifloat8_format_for_deep_learning.html"
+      ]
+    ],
+    "year": 2024,
+    "type": "preprint",
+    "shared_first_authors": [],
+    "venue_links": []
+  },
+  {
+    "key": "align",
+    "id": "align-your-intents",
+    "title": "Align Your Intents: Offline Imitation Learning via Optimal Transport",
+    "authors": [
+      "Maksim Bobrin",
+      "Nazar Buzun",
+      "Dmitrii Krylov",
+      "Dmitry V. Dylov"
+    ],
+    "venue": "arXiv preprint · 2024",
+    "city": "",
+    "event": null,
+    "url": "https://arxiv.org/abs/2402.13037",
+    "pdf": "https://arxiv.org/pdf/2402.13037",
+    "summary": "AILOT matches expert and agent trajectories in a learned space of intents. The transport cost supplies a reward even when the demonstrations contain no action labels.",
+    "links": [],
+    "year": 2024,
+    "type": "preprint",
+    "shared_first_authors": [],
+    "venue_links": []
+  }
+]

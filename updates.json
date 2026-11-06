@@ -1,0 +1,66 @@
+[
+  {
+    "date": "2026-09-30",
+    "label": "Sep 2026",
+    "html": "New preprint: <a href=\"#fenchel-tilting\">Fenchel Tilting</a>, on adapting generative models with weighted samples.",
+    "sources": [
+      "https://arxiv.org/abs/2609.40030"
+    ]
+  },
+  {
+    "date": "2026-09-25",
+    "label": "Sep 2026",
+    "html": "<a href=\"#convex-compositional-reasoning\">Convex Compositional Reasoning Models</a> accepted to <a href=\"https://neurips.cc/Conferences/2026\">NeurIPS 2026</a>.",
+    "sources": [
+      "https://mtakac.com/"
+    ]
+  },
+  {
+    "date": "2026-07",
+    "label": "Jul 2026",
+    "html": "Workshop acceptances at <a href=\"https://icml.cc/Conferences/2026\">ICML 2026</a>: <a href=\"#dual-advantage-fields\">Dual Advantage Fields</a> at <a href=\"https://decision-making-offline2online-icml2026.github.io/\">Offline-to-Online</a> and <a href=\"#plan-dont-pose\">Plan, Don’t Pose</a> at <a href=\"https://spigmworkshop2026.github.io/\">SPIGM</a>.",
+    "sources": [
+      "https://spigmworkshop2026.github.io/papers/",
+      "https://mtakac.com/"
+    ]
+  },
+  {
+    "date": "2026-05",
+    "label": "May 2026",
+    "html": "<a href=\"#zero-shot-off-policy\">Zero-Shot Off-Policy Learning</a> accepted to <a href=\"https://icml.cc/Conferences/2026\">ICML 2026</a>.",
+    "sources": [
+      "https://mtakac.com/",
+      "https://proceedings.mlr.press/v306/asadulaev26b.html"
+    ]
+  },
+  {
+    "date": "2026-01",
+    "label": "Jan 2026",
+    "html": "Two papers accepted to <a href=\"https://iclr.cc/Conferences/2026\">ICLR 2026</a>: <a href=\"#zero-shot-adaptation\">Zero-Shot Adaptation</a> and <a href=\"#hota\">HOTA</a>.",
+    "sources": [
+      "https://iclr.cc/Conferences/2026/Dates",
+      "https://proceedings.iclr.cc/paper_files/paper/2026/hash/cd7fe6d521c3fc74c5363a7e29f47910-Abstract-Conference.html",
+      "https://proceedings.iclr.cc/paper_files/paper/2026/hash/8911a007b983c6a4c33fcf03630fa107-Abstract-Conference.html"
+    ]
+  },
+  {
+    "date": "2025-09",
+    "end_date": "2025-12",
+    "label": "Sep–Dec 2025",
+    "html": "Research internship in the Machine Learning department at <a href=\"https://mbzuai.ac.ae/\">MBZUAI</a>, under the supervision of <a href=\"https://mtakac.com/\">Martin Takáč</a>.",
+    "sources": [
+      "User-provided internship dates and supervision",
+      "https://mbzuai.ac.ae/academics/faculty-directory/martin-takac"
+    ]
+  },
+  {
+    "date": "2024-09-26",
+    "label": "26 Sep 2024",
+    "html": "<a href=\"#enot\">ENOT</a> accepted to <a href=\"https://neurips.cc/Conferences/2024\">NeurIPS 2024</a> and selected as a <strong class=\"spotlight-tag\">Spotlight</strong>.",
+    "sources": [
+      "https://neurips.cc/Conferences/2024/Dates",
+      "https://neurips.cc/virtual/2024/poster/96684"
+    ],
+    "date_note": "Official main-conference author notification: 26 September 2024, 01:00 UTC."
+  }
+]

@@ -1,0 +1,20 @@
+name: Validate website
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Regenerate pages
+        run: python3 tools/build_pages.py
+      - name: Check local links and assets
+        run: python3 tools/check_site.py
+      - name: Check generated files are current
+        run: git diff --exit-code -- '*.html'
