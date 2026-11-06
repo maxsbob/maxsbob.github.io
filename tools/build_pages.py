@@ -19,6 +19,30 @@ profiles = [
 def page(filename, title, active, content, scripts=''):
     page_title = name if filename == 'index.html' else title + ' · ' + name
     page_url = 'https://maxsbob.github.io/' + ('' if filename == 'index.html' else filename)
+    sidebar_extra = ''
+    if filename == 'index.html':
+        renderer = (out/'assets/life.js').read_text().replace("import { IdeaWorld } from './idea-world.mjs';\n", '', 1)
+        runtime = (out/'assets/idea-world.mjs').read_text() + '\n' + renderer
+        (out/'assets/life-runtime.mjs').write_text(runtime)
+        life_version = __import__('hashlib').sha256(runtime.encode() + (out/'assets/life-loader.js').read_bytes()).hexdigest()[:12]
+        scripts += f'<script src="assets/life-loader.js?v={life_version}" defer></script>'
+        sidebar_extra = '''<figure class="life" data-life hidden>
+        <figcaption title="Combine ideas inspired by creativity, memory, adaptation, and transport. With every idea off, the world follows Conway’s Game of Life.">Research playground</figcaption>
+        <div class="life-ideas" role="group" aria-label="Combine research ideas">
+          <button type="button" data-idea="creativity" aria-pressed="true" title="Introduce new seeds into unexplored areas">Creativity</button>
+          <button type="button" data-idea="memory" aria-pressed="false" title="Let fading traces influence new growth">Memory</button>
+          <button type="button" data-idea="adaptation" aria-pressed="false" title="Change the habitat and let surviving cells acclimatize">Adaptation</button>
+          <button type="button" data-idea="transport" aria-pressed="false" title="Carry patterns through a changing flow">Transport</button>
+        </div>
+        <canvas class="life-canvas" role="button" tabindex="0" aria-label="An evolving world of research ideas. Click or press Enter to plant a seed." aria-describedby="life-hint" width="432" height="284"></canvas>
+        <p id="life-hint" class="life-hint" data-life-note aria-live="polite">New seeds explore the edges of life.</p>
+        <div class="life-controls">
+          <button type="button" data-life-toggle aria-pressed="false">Pause</button>
+          <button type="button" data-life-reset title="Start over with the same seed and current ideas">Reset</button>
+          <button type="button" data-life-mix title="Try a new combination of ideas and a fresh seed">Mix</button>
+          <span class="life-generation" data-life-generation aria-hidden="true">g. 000</span>
+        </div>
+      </figure>'''
     links = []
     for label, href in nav:
         current = ' aria-current="page"' if href == active else ''
@@ -61,10 +85,10 @@ def page(filename, title, active, content, scripts=''):
         <img class="portrait" src="assets/portrait-360.jpg" alt="Maksim Bobrin by the sea" width="360" height="450" fetchpriority="high" decoding="async">
       </picture>
       <ul class="profiles" aria-label="Profiles">{profile_items}</ul>
+      {sidebar_extra}
     </aside>
     <div class="column">
       <main id="main">{content}</main>
-      <footer>Maksim Bobrin</footer>
     </div>
   </div>
 </body>
@@ -106,6 +130,7 @@ def make_paper(p):
       <article class="paper-row" id="{p['id']}">
         <div class="venue-line">{venue}</div>
         <h5 class="paper-title">{a(p['title'],p['url'])}</h5>
+        <p class="paper-keyword" data-topic="{escape(p['keyword'].casefold().replace(' ', '-'), quote=True)}"><span class="sr-only">Research topic: </span>{escape(p['keyword'])}</p>
         {auth_html}
         <div class="resources">{links}<details class="abstract"><summary>Summary</summary><p>{escape(p['summary'])}</p></details></div>
       </article>"""

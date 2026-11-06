@@ -99,6 +99,26 @@ h3 { font-size: 1.1875rem; font-weight: 650; }
   text-decoration: none;
 }
 .profiles img { width: 14px; height: 14px; object-fit: contain; opacity: .84; }
+.life { width: 216px; max-width: 100%; margin: 26px auto 0; padding-top: 15px; border-top: 1px solid #e9e5e1; }
+.life figcaption { font-size: .8125rem; font-weight: 500; text-align: center; color: #514840; }
+.life-ideas { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 4px; margin-top: 10px; }
+.life-ideas button { appearance: none; border: 1px solid #e6dfd9; border-radius: 4px; padding: 3px 6px; color: #73665d; background: #fff; font: .65625rem/1.5 'DM Sans',sans-serif; cursor: pointer; }
+.life-ideas button:hover { border-color: var(--idea-tone); color: var(--idea-tone); }
+.life-ideas button[aria-pressed=true] { color: var(--idea-tone); border-color: var(--idea-tone); background: var(--idea-wash); }
+.life-ideas [data-idea=creativity] { --idea-tone: #a94929; --idea-wash: #fff5ed; }
+.life-ideas [data-idea=memory] { --idea-tone: #795098; --idea-wash: #f8f2fb; }
+.life-ideas [data-idea=adaptation] { --idea-tone: #326b57; --idea-wash: #eff7f2; }
+.life-ideas [data-idea=transport] { --idea-tone: #245c94; --idea-wash: #eff5fb; }
+.life-canvas { display: block; width: 100%; height: clamp(88px, calc(100svh - 680px), 142px); margin-top: 10px; cursor: crosshair; }
+.life-controls { display: flex; align-items: center; gap: 14px; margin-top: 9px; }
+.life-controls button { appearance: none; border: 0; padding: 3px 0; background: transparent; color: #514840; font: inherit; font-size: .75rem; line-height: 1.4; cursor: pointer; }
+.life-controls button:hover { color: #b43f21; text-decoration: underline; text-underline-offset: .2em; }
+.life-generation { margin-left: auto; color: #87786d; font: .6875rem/1.4 ui-monospace, monospace; font-variant-numeric: tabular-nums; }
+.life-hint { min-height: 30px; margin: 8px 0 0; font-size: .65625rem; line-height: 1.45; color: #87786d; text-align: left; }
+@media (max-height: 700px) {
+  .life { margin-top: 22px; }
+  .life-hint { min-height: 15px; margin-top: 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+}
 .topbar { width: min(100% - 64px, 1024px); margin: 0 auto; border-bottom: 1px solid var(--line); }
 .topbar nav { display: flex; justify-content: center; gap: clamp(15px, 3.3vw, 42px); }
 .topbar a {
@@ -162,7 +182,6 @@ time { font-variant-numeric: tabular-nums; }
 summary { cursor: pointer; width: fit-content; }
 summary::marker { font-size: .75em; }
 .abstract p { margin: 5px 0; color: var(--ink); font-size: 1.0625rem; }
-footer { margin-top: 33px; padding-top: 12px; border-top: 1px solid var(--line); font-size: .84375rem; color: var(--ink); }
 /* Publication bibliography */
 #publications {
   --conference: #245c94;
@@ -210,6 +229,22 @@ footer { margin-top: 33px; padding-top: 12px; border-top: 1px solid var(--line);
 .paper-title { margin: 0; color: #000; font-size: 1.1875rem; font-weight: 650; letter-spacing: -.01em; line-height: 1.35; text-wrap: pretty; }
 .paper-title a { color: inherit; text-decoration: none; transition: color .15s ease; }
 .paper-title a:hover, .paper-title a:focus-visible { color: var(--publication-link); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .16em; }
+.paper-keyword {
+  --topic-ink: #245c94;
+  --topic-tint: #f2f6fb;
+  display: flex; align-items: center; gap: 6px; width: fit-content;
+  margin: 7px 0 5px; padding: 2px 8px;
+  border: 1px solid color-mix(in srgb, var(--topic-ink) 14%, white);
+  border-radius: 4px;
+  color: var(--topic-ink); background: var(--topic-tint);
+  font-size: .75rem; font-weight: 500; line-height: 1.5;
+}
+.paper-keyword::before { content: ''; width: 4px; height: 4px; border-radius: 50%; background: currentColor; flex: 0 0 auto; }
+.paper-keyword[data-topic=reinforcement-learning] { --topic-ink: #326b57; --topic-tint: #f1f7f3; }
+.paper-keyword[data-topic=generative-modelling] { --topic-ink: #a94929; --topic-tint: #fff5ef; }
+.paper-keyword[data-topic=reasoning] { --topic-ink: #795098; --topic-tint: #f7f3fa; }
+.paper-keyword[data-topic=preference-optimization] { --topic-ink: #396d76; --topic-tint: #f1f7f8; }
+.paper-keyword[data-topic=efficient-computation] { --topic-ink: #7c6542; --topic-tint: #f8f5ef; }
 .paper-authors, .all-authors { margin: .35rem 0 .4rem; font-size: .96rem; line-height: 1.55; }
 .all-authors summary { display: inline; border-bottom: 1px dotted #999; }
 .all-authors summary::after { content: ' +'; font-weight: 650; color: var(--publication-link); }
@@ -295,6 +330,7 @@ footer { margin-top: 33px; padding-top: 12px; border-top: 1px solid var(--line);
   .year-title { gap: 13px; }
   .year-title::before { content: ''; flex: 1; height: 1px; background: #d8dee3; }
   .group-title { justify-content: center; gap: 10px; padding: 10px 8px; font-size: 1rem; }
+  .paper-keyword { margin-inline: auto; }
   .paper-row { width: min(100%, 39ch); margin-inline: auto; text-align: center; overflow-wrap: anywhere; }
   .venue-line { justify-content: center; }
   .resources { justify-content: center; }
@@ -305,7 +341,7 @@ footer { margin-top: 33px; padding-top: 12px; border-top: 1px solid var(--line);
 @media print {
   .layout { display: block; width: auto; padding: 0; }
   .profile { position: static; margin-bottom: 12px; }
-  .topbar, .profiles, .skip, .controls, .back { display: none; }
+  .topbar, .profiles, .skip, .controls, .back, .life { display: none; }
   .slide[hidden] { display: block !important; }
   .slide { break-inside: avoid; }
 }

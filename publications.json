@@ -30,7 +30,8 @@
         "NeurIPS 2026",
         "https://neurips.cc/Conferences/2026"
       ]
-    ]
+    ],
+    "keyword": "Reasoning"
   },
   {
     "key": "off",
@@ -68,7 +69,8 @@
         "ICML 2026",
         "https://icml.cc/Conferences/2026"
       ]
-    ]
+    ],
+    "keyword": "Reinforcement learning"
   },
   {
     "key": "fields",
@@ -103,7 +105,8 @@
         "ICML 2026",
         "https://icml.cc/Conferences/2026"
       ]
-    ]
+    ],
+    "keyword": "Reinforcement learning"
   },
   {
     "key": "motion",
@@ -140,7 +143,8 @@
         "ICML 2026",
         "https://icml.cc/Conferences/2026"
       ]
-    ]
+    ],
+    "keyword": "Generative modelling"
   },
   {
     "key": "dyn",
@@ -173,7 +177,8 @@
         "ICLR 2026",
         "https://iclr.cc/Conferences/2026"
       ]
-    ]
+    ],
+    "keyword": "Reinforcement learning"
   },
   {
     "key": "hota",
@@ -205,7 +210,8 @@
         "ICLR 2026",
         "https://iclr.cc/Conferences/2026"
       ]
-    ]
+    ],
+    "keyword": "Optimal transport"
   },
   {
     "key": "rdpo",
@@ -240,7 +246,8 @@
         "MICCAI 2025",
         "https://conferences.miccai.org/2025/"
       ]
-    ]
+    ],
+    "keyword": "Preference optimization"
   },
   {
     "key": "enot",
@@ -279,7 +286,8 @@
         "NeurIPS 2024",
         "https://neurips.cc/Conferences/2024"
       ]
-    ]
+    ],
+    "keyword": "Optimal transport"
   },
   {
     "key": "fenchel",
@@ -300,7 +308,8 @@
     "year": 2026,
     "type": "preprint",
     "shared_first_authors": [],
-    "venue_links": []
+    "venue_links": [],
+    "keyword": "Generative modelling"
   },
   {
     "key": "hifloat",
@@ -342,7 +351,8 @@
     "year": 2024,
     "type": "preprint",
     "shared_first_authors": [],
-    "venue_links": []
+    "venue_links": [],
+    "keyword": "Efficient computation"
   },
   {
     "key": "align",
@@ -364,6 +374,7 @@
     "year": 2024,
     "type": "preprint",
     "shared_first_authors": [],
-    "venue_links": []
+    "venue_links": [],
+    "keyword": "Optimal transport"
   }
 ]
