@@ -160,6 +160,7 @@ for entry in news:
 home = f'''
   <section class="bio" aria-labelledby="about">
     <h2 id="about" class="page-title">About</h2>
+    <p>I’m currently a PhD student. I hold bachelor’s and master’s degrees in mathematics from <a href="https://www.hse.ru/en/ma/sltheory/">HSE University</a>.</p>
     <p>I explore open-ended questions in neural creativity, learning, and adaptation, often following unusual ideas before knowing where they will lead. I’m especially interested in emergent complexity: how simple local rules give rise to rich systems and behaviors without a prescribed goal.</p>
     <p>I see intelligence as the ability to draw on prior experience and adapt to the unfamiliar. Curiosity and unexpected connections across fields guide my research.</p>
   </section>
