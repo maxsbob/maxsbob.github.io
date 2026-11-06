@@ -8,7 +8,11 @@ slides_url = slides_path + '?v=' + slides_version
 
 name = 'Maksim Bobrin'
 nav = [('Home','index.html'),('Talks','talks.html')]
-profiles = [('linkedin','LinkedIn'),('github','GitHub'),('scholar','Google Scholar')]
+profiles = [
+    ('linkedin', 'LinkedIn', 'https://www.linkedin.com/in/maksim-bobrin'),
+    ('github', 'GitHub', 'https://github.com/maxsbob'),
+    ('scholar', 'Google Scholar', 'https://scholar.google.com/citations?user=8vy8vqgAAAAJ&hl=en'),
+]
 
 def page(filename, title, active, content, scripts=''):
     links = []
@@ -18,11 +22,9 @@ def page(filename, title, active, content, scripts=''):
     lettering = f'<span class="name-initial">{escape(name[0])}</span>{escape(name[1:])}'
     name_html = f'<h1 class="name">{lettering}</h1>' if filename == 'index.html' else f'<a class="name" href="index.html">{lettering}</a>'
     profile_items = '\n'.join(
-        f'<li data-profile="{key}"><span title="{label} profile URL to be added"><img src="assets/{key}.svg" alt="" width="15" height="15">{label}</span></li>'
-        for key, label in profiles
+        f'<li data-profile="{key}"><a href="{escape(url, quote=True)}"><img src="assets/{key}.svg" alt="" width="15" height="15">{label}</a></li>'
+        for key, label, url in profiles
     )
-    scholar_href = "https://scholar.google.com/citations?user=8vy8vqgAAAAJ"
-    profile_items = profile_items.replace('<span title="Google Scholar profile URL to be added">', f'<a href="{scholar_href}">',1).replace('Google Scholar</span>','Google Scholar</a>',1)
     document = f'''<!doctype html>
 <html lang="en">
 <head>
@@ -33,8 +35,6 @@ def page(filename, title, active, content, scripts=''):
   <meta name="description" content="Research, publications, and talks by Maksim Bobrin.">
   <title>{name if filename == 'index.html' else escape(title) + ' · ' + name}</title>
   <link rel="stylesheet" href="assets/site.css">
-  <script src="assets/profile-links.js" defer></script>
-  <script src="assets/profiles.js" defer></script>
   {scripts}
 </head>
 <body>

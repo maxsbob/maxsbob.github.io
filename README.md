@@ -21,7 +21,7 @@ Open http://localhost:8000.
 - **About, research interests, and talks** — edit tools/build_pages.py, then run python3 tools/build_pages.py.
 - **Latest Updates** — edit updates.json, then run python3 tools/build_pages.py. Entries use date and label for the timeline, html for linked text, and sources for editorial references.
 - **Publications** — edit publications.json, then run the same command. The year controls the year group; type is conference, workshop, or preprint. Add shared first authors to shared_first_authors using the exact names in authors. Venue links are label/URL pairs in venue_links; workshops include a separate link to the parent conference.
-- **Profile links** — edit assets/profile-links.js.
+- **Profile links** — edit the profiles list in tools/build_pages.py and regenerate the HTML. Links are rendered directly in the page and work without JavaScript.
 - **Photo** — replace assets/maksim-bobrin.png. Its crop and display size are controlled by .portrait in assets/site.css.
 - **Fonts, colors, and spacing** — edit assets/site.css.
 - **Heading ornaments** — static SVGs in assets/math/ and assets/automata/.
