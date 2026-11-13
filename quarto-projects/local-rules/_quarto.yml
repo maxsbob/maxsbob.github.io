@@ -1,0 +1,49 @@
+project:
+  type: website
+  output-dir: _site
+  resources:
+    - "!project.json"
+
+website:
+  title: "A small world of local rules"
+  description: "A tiny cellular automaton as a project notebook: the question, a reproducible experiment, and observations about emergent patterns."
+  site-url: https://maxsbob.github.io/blog/local-rules/
+  search: false
+  navbar:
+    title: false
+    background: light
+    left:
+      - text: Home
+        href: https://maxsbob.github.io/
+      - text: Talks
+        href: https://maxsbob.github.io/talks.html
+      - text: Blog
+        href: https://maxsbob.github.io/blog/
+  sidebar:
+    style: docked
+    title: "Project"
+    contents:
+      - href: index.qmd
+        text: Overview
+      - href: experiment.qmd
+        text: Experiment
+      - href: notes.qmd
+        text: Notes
+  page-footer:
+    left: '<a href="https://maxsbob.github.io/blog/">← All projects</a>'
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+    toc-title: "On this page"
+    code-copy: true
+    link-external-newwindow: true
+    highlight-style: github
+    lang: en
+
+# Code examples are displayed without requiring Python/R packages in CI.
+# See docs/blog.md before enabling executable cells.
+execute:
+  eval: false

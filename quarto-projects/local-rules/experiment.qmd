@@ -1,0 +1,74 @@
+---
+title: "Three seeds, eight steps"
+description: "A small reproducible experiment with a block, a blinker, and a glider."
+---
+
+## Setup
+
+Use an unbounded grid, represented by the coordinates of its live cells.
+There are no random choices or boundaries. Start with each seed separately
+and apply the same update eight times.
+
+The three seeds are a 2 × 2 block, a row of three cells (a blinker), and a
+five-cell glider. The code below uses only Python's standard library.
+
+## Minimal implementation
+
+```python
+from collections import Counter
+
+def step(live):
+    neighbors = Counter(
+        (x + dx, y + dy)
+        for x, y in live
+        for dx in (-1, 0, 1)
+        for dy in (-1, 0, 1)
+        if (dx, dy) != (0, 0)
+    )
+    return {
+        cell for cell, count in neighbors.items()
+        if count == 3 or (count == 2 and cell in live)
+    }
+
+seeds = {
+    "Block": {(0, 0), (1, 0), (0, 1), (1, 1)},
+    "Blinker": {(0, 0), (1, 0), (2, 0)},
+    "Glider": {(1, 0), (2, 1), (0, 2), (1, 2), (2, 2)},
+}
+
+for name, initial in seeds.items():
+    live = initial.copy()
+    counts = [len(live)]
+    for generation in range(1, 9):
+        live = step(live)
+        if generation in (4, 8):
+            counts.append(len(live))
+    shift = (min(x for x, y in live) - min(x for x, y in initial),
+             min(y for x, y in live) - min(y for x, y in initial))
+    print(name, counts, shift, live == initial)
+```
+
+## Observations
+
+| Seed | Live cells at step 0 | Step 4 | Step 8 | Displacement after 8 steps |
+|:--|--:|--:|--:|:--|
+| Block | 4 | 4 | 4 | (0, 0) |
+| Blinker | 3 | 3 | 3 | (0, 0) |
+| Glider | 5 | 5 | 5 | (2, 2) |
+
+Displacement here means the change in the minimum x and y coordinates of
+the live cells. It is useful for these repeating seeds; it is not a general
+measure of motion for arbitrary patterns.
+
+The block is unchanged at every step. The blinker returns to its original
+orientation every two steps. The glider returns to the same shape every
+four steps, translated one cell along each axis.
+
+## What the table misses
+
+All three populations look constant at the sampled steps. Looking only at
+these counts hides both the blinker's intermediate orientation and the
+glider's movement. A useful description needs time and spatial structure,
+as well as population.
+
+[Limitations and next experiments →](notes.qmd)

@@ -1,0 +1,32 @@
+---
+title: "Notes and open questions"
+description: "What this small example leaves out, and where the experiment could go next."
+---
+
+## Limitations
+
+Three deliberately chosen seeds cannot tell us what a typical initial
+condition will do. They illustrate distinct behaviors, but say little
+about the frequency of those behaviors or the variety of more complex
+patterns.
+
+The grid is unbounded and the update is synchronous. Finite boundaries,
+noise, or a different update order would define a different experiment.
+
+## What I would try next
+
+- Sample random initial conditions at several densities and track how
+  long their transients last.
+- Detect repeating patterns up to translation, so moving patterns do not
+  appear unrelated at every step.
+- Compare population with spatial measurements, such as occupied area
+  and the number of connected components.
+
+## A useful project record
+
+Even a tiny experiment benefits from a precise seed, a stated update rule,
+reproducible code, and an explanation of what the measurements leave out.
+The same structure can hold a much larger project: an overview for the main
+idea, an experiment page for the evidence, and notes for unfinished work.
+
+[← Back to the overview](index.qmd)

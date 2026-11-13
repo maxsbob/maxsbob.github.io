@@ -1,0 +1,20 @@
+---
+title: "Notes"
+description: "Limitations, references, and ideas for the next iteration."
+---
+
+## Limitations
+
+What assumptions does the project make? In which settings might the
+approach stop working?
+
+## Open questions
+
+- Which observation needs a better explanation?
+- What would be the smallest useful next experiment?
+
+## References
+
+Add links to papers, code, datasets, and other work that informed this project.
+
+[← Back to the overview](index.qmd)

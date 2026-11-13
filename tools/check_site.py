@@ -1,8 +1,11 @@
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urljoin, urlsplit
+import argparse
 
-ROOT = Path(__file__).resolve().parents[1]
+arguments = argparse.ArgumentParser(description="Check local HTML links, fragments, and assets.")
+arguments.add_argument("root", nargs="?", type=Path, default=Path(__file__).resolve().parents[1])
+ROOT = arguments.parse_args().root.resolve()
 class Links(HTMLParser):
     def __init__(self):
         super().__init__()
@@ -17,7 +20,7 @@ class Links(HTMLParser):
 
 pages = {}
 for path in ROOT.rglob("*.html"):
-    if any(part.startswith(".") for part in path.relative_to(ROOT).parts):
+    if any(part.startswith((".", "_")) for part in path.relative_to(ROOT).parts):
         continue
     parser = Links()
     parser.feed(path.read_text())
@@ -31,7 +34,7 @@ for path, parser in pages.items():
         if dest.is_dir():
             dest /= "index.html"
         if not dest.is_file():
-            raise ValueError(f"{path.name}: missing {target}")
+            raise ValueError(f"{path.relative_to(ROOT)}: missing {target}")
         if uri.fragment and dest in pages and uri.fragment not in pages[dest].ids:
-            raise ValueError(f"{path.name}: missing fragment {target}")
+            raise ValueError(f"{path.relative_to(ROOT)}: missing fragment {target}")
 print(f"Validated {len(pages)} HTML pages and all local links, fragments, and assets.")

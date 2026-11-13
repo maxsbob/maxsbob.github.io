@@ -1,23 +1,58 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Blog — Maksim Bobrin</title>
-  <meta name="description" content="Research notes and paper explanations by Maksim Bobrin.">
-  <link rel="canonical" href="https://maxsbob.github.io/blog/">
-  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/assets/images/favicon-192x192.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Arvo:wght@400&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/site.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="Projects, experiments, and research notes by Maksim Bobrin.">
+  <meta property="og:title" content="Blog · Maksim Bobrin">
+  <meta property="og:description" content="Projects, experiments, and research notes by Maksim Bobrin.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://maxsbob.github.io/blog/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Blog · Maksim Bobrin">
+  <meta name="twitter:description" content="Projects, experiments, and research notes by Maksim Bobrin.">
+  <title>Blog · Maksim Bobrin</title>
+  <link rel="stylesheet" href="../assets/site.css?v=a213619a45d1">
+
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header"><div class="nav-shell nav-shell-end"><nav class="site-nav" aria-label="Main navigation"><a href="/publications/">Publications</a><a href="/blog/" aria-current="page">Blog</a><a href="https://github.com/maxsbob" rel="me">GitHub</a></nav></div></header>
-  <main id="main">
-    <section class="page-hero"><div class="container"><p class="eyebrow">Research notes</p><h1>Blog</h1><p class="page-intro">Readable explanations of the ideas behind my papers and projects.</p></div></section>
-    <section class="section"><div class="container">
-      <article class="post-row"><div class="row-label">ENOT</div><div class="post-main"><h2>Fast neural optimal transport through expectile regularization</h2><p class="row-description">Why approximating the <em>c</em>-transform is difficult—and how expectile regularization makes neural optimal transport stable and fast.</p></div><a class="button row-action" href="/blog/enot/">Read article <svg class="arrow-icon" aria-hidden="true" viewBox="0 0 16 16" fill="none"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" stroke="currentColor" stroke-width="1.6"/></svg></a></article>
-    </div></section>
-  </main>
-  <footer class="site-footer"><div class="container footer-inner"><p>© 2026 Maksim Bobrin</p><a href="/">Home</a></div></footer>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="topbar">
+    <nav aria-label="Main navigation"><a href="../index.html">Home</a> <a href="../talks.html">Talks</a> <a href="../blog/" aria-current="page">Blog</a></nav>
+  </header>
+  <div class="layout">
+    <aside class="profile" aria-label="Researcher profile">
+      <a class="name" href="../index.html"><span class="name-initial">M</span>aksim Bobrin</a>
+      <picture>
+        <source type="image/webp" srcset="../assets/portrait-180.webp 180w, ../assets/portrait-360.webp 360w, ../assets/portrait-540.webp 540w" sizes="(max-width: 640px) 152px, (pointer: coarse) and (orientation: landscape) and (max-height: 500px) and (max-width: 960px) 152px, 180px">
+        <img class="portrait" src="../assets/portrait-360.jpg" alt="Maksim Bobrin by the sea" width="360" height="450" fetchpriority="high" decoding="async">
+      </picture>
+      <ul class="profiles" aria-label="Profiles"><li data-profile="linkedin"><a href="https://www.linkedin.com/in/maksim-bobrin"><img src="../assets/linkedin.svg" alt="" width="15" height="15">LinkedIn</a></li>
+<li data-profile="github"><a href="https://github.com/maxsbob"><img src="../assets/github.svg" alt="" width="15" height="15">GitHub</a></li>
+<li data-profile="scholar"><a href="https://scholar.google.com/citations?user=8vy8vqgAAAAJ&amp;hl=en"><img src="../assets/scholar.svg" alt="" width="15" height="15">Google Scholar</a></li></ul>
+
+    </aside>
+    <div class="column">
+      <main id="main">
+  <div class="subintro blog-intro"><h1 class="page-title">Blog</h1>
+    <p class="lede">Projects, experiments, and the ideas behind them.</p>
+  </div>
+  <section aria-label="Project websites"><ul class="blog-list"><li><article class="blog-entry" aria-labelledby="local-rules">
+      <div class="blog-meta"><time datetime="2026-11-13">13 Nov 2026</time><span class="blog-tags"><span>Example</span><span>Simulation</span></span></div>
+      <h2 id="local-rules"><a href="local-rules/">A small world of local rules</a></h2>
+      <p>A tiny cellular automaton as a project notebook: the question, a reproducible experiment, and observations about emergent patterns.</p>
+      <a class="blog-open" href="local-rules/">Explore project <span aria-hidden="true">→</span><span class="sr-only">: A small world of local rules</span></a>
+    </article></li></ul></section>
+  <section class="blog-archive" aria-labelledby="earlier-notes"><h2 id="earlier-notes">Earlier notes</h2>
+    <article><h3><a href="enot/">Fast neural optimal transport through expectile regularization</a></h3>
+      <p>The ideas behind ENOT: making neural optimal transport stable and fast.</p>
+      <a class="blog-open" href="enot/">Read article <span aria-hidden="true">→</span></a>
+    </article>
+  </section>
+</main>
+    </div>
+  </div>
 </body>
 </html>

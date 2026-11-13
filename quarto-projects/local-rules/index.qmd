@@ -1,0 +1,48 @@
+---
+title: "A small world of local rules"
+description: "How much structure can emerge from a rule that only sees its nearest neighbors?"
+---
+
+::: {.project-label}
+Example project · Simulation
+:::
+
+This is a sample project notebook. It shows one way to tell a project's story:
+start with a question, make the experiment reproducible, and keep a place for
+the questions that remain.
+
+## The question
+
+A cellular automaton is a world built from a grid and a local update rule.
+Each cell can be alive or empty. It sees only its eight nearest neighbors,
+yet the whole grid can develop patterns that persist, oscillate, or move.
+
+What would we need to record to distinguish those behaviors in a small,
+controlled experiment?
+
+## One rule, many behaviors
+
+For this example, the update rule is Conway's Game of Life:
+
+- A live cell survives with two or three live neighbors.
+- An empty cell becomes alive with exactly three live neighbors.
+- All other cells become empty.
+
+Every cell updates at the same time. There is no additional instruction
+for a pattern to move or repeat; those behaviors emerge from the rule.
+
+::: {.callout-note appearance="simple" title="The central observation"}
+Counting live cells is not enough to describe a pattern. A stationary block,
+an oscillating blinker, and a moving glider all keep their population after
+each complete cycle, while their spatial behavior differs.
+:::
+
+## From an idea to a notebook
+
+The [experiment](experiment.qmd) follows three small seeds for eight steps.
+It includes a compact Python implementation and a table that can be checked
+without a dataset or a large compute environment.
+
+The [notes](notes.qmd) collect the limits of the experiment and possible
+next steps. This separation leaves room for an idea to grow into several
+pages while keeping the overview easy to read.

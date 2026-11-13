@@ -1,0 +1,28 @@
+---
+title: "Experiment"
+description: "Setup, observations, and enough detail to repeat the work."
+---
+
+## Setup
+
+Describe the data, method, environment, and evaluation procedure. Link to
+the code and state which settings matter for reproducing the experiment.
+
+## A minimal example
+
+```python
+# Replace this with a small, readable example from the project.
+values = [1, 2, 3]
+print(sum(values) / len(values))
+```
+
+## Results
+
+Add a figure or a table and describe the observation it supports. Include
+units and uncertainty where appropriate.
+
+## Interpretation
+
+Explain what surprised you, what failed, and what you would try next.
+
+[Open questions and notes →](notes.qmd)

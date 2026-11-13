@@ -1,5 +1,7 @@
 from pathlib import Path
 from html import escape
+from datetime import date
+from blog import load_projects
 
 out = Path(__file__).resolve().parents[1]
 styles_url = 'assets/site.css?v=' + __import__('hashlib').sha256((out/'assets/site.css').read_bytes()).hexdigest()[:12]
@@ -9,16 +11,18 @@ slides_url = slides_path + '?v=' + slides_version
 
 name = 'Maksim Bobrin'
 description = 'PhD student, Researcher'
-nav = [('Home','index.html'),('Talks','talks.html')]
+nav = [('Home','index.html'),('Talks','talks.html'),('Blog','blog/')]
 profiles = [
     ('linkedin', 'LinkedIn', 'https://www.linkedin.com/in/maksim-bobrin'),
     ('github', 'GitHub', 'https://github.com/maxsbob'),
     ('scholar', 'Google Scholar', 'https://scholar.google.com/citations?user=8vy8vqgAAAAJ&hl=en'),
 ]
 
-def page(filename, title, active, content, scripts=''):
+def page(filename, title, active, content, scripts='', page_description=None):
+    prefix = '../' * len(Path(filename).parent.parts)
+    page_description = page_description or description
     page_title = name if filename == 'index.html' else title + ' · ' + name
-    page_url = 'https://maxsbob.github.io/' + ('' if filename == 'index.html' else filename)
+    page_url = 'https://maxsbob.github.io/' + filename.removesuffix('index.html')
     sidebar_extra = ''
     if filename == 'index.html':
         renderer = (out/'assets/life.js').read_text().replace("import { IdeaWorld } from './idea-world.mjs';\n", '', 1)
@@ -46,11 +50,11 @@ def page(filename, title, active, content, scripts=''):
     links = []
     for label, href in nav:
         current = ' aria-current="page"' if href == active else ''
-        links.append(f'<a href="{href}"{current}>{label}</a>')
+        links.append(f'<a href="{prefix}{href}"{current}>{label}</a>')
     lettering = f'<span class="name-initial">{escape(name[0])}</span>{escape(name[1:])}'
-    name_html = f'<h1 class="name">{lettering}</h1>' if filename == 'index.html' else f'<a class="name" href="index.html">{lettering}</a>'
+    name_html = f'<h1 class="name">{lettering}</h1>' if filename == 'index.html' else f'<a class="name" href="{prefix}index.html">{lettering}</a>'
     profile_items = '\n'.join(
-        f'<li data-profile="{key}"><a href="{escape(url, quote=True)}"><img src="assets/{key}.svg" alt="" width="15" height="15">{label}</a></li>'
+        f'<li data-profile="{key}"><a href="{escape(url, quote=True)}"><img src="{prefix}assets/{key}.svg" alt="" width="15" height="15">{label}</a></li>'
         for key, label, url in profiles
     )
     document = f'''<!doctype html>
@@ -60,16 +64,16 @@ def page(filename, title, active, content, scripts=''):
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light">
   <meta name="theme-color" content="#ffffff">
-  <meta name="description" content="{escape(description, quote=True)}">
+  <meta name="description" content="{escape(page_description, quote=True)}">
   <meta property="og:title" content="{escape(page_title, quote=True)}">
-  <meta property="og:description" content="{escape(description, quote=True)}">
+  <meta property="og:description" content="{escape(page_description, quote=True)}">
   <meta property="og:type" content="website">
   <meta property="og:url" content="{page_url}">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="{escape(page_title, quote=True)}">
-  <meta name="twitter:description" content="{escape(description, quote=True)}">
+  <meta name="twitter:description" content="{escape(page_description, quote=True)}">
   <title>{escape(page_title)}</title>
-  <link rel="stylesheet" href="{styles_url}">
+  <link rel="stylesheet" href="{prefix}{styles_url}">
   {scripts}
 </head>
 <body>
@@ -81,8 +85,8 @@ def page(filename, title, active, content, scripts=''):
     <aside class="profile" aria-label="Researcher profile">
       {name_html}
       <picture>
-        <source type="image/webp" srcset="assets/portrait-180.webp 180w, assets/portrait-360.webp 360w, assets/portrait-540.webp 540w" sizes="(max-width: 640px) 152px, (pointer: coarse) and (orientation: landscape) and (max-height: 500px) and (max-width: 960px) 152px, 180px">
-        <img class="portrait" src="assets/portrait-360.jpg" alt="Maksim Bobrin by the sea" width="360" height="450" fetchpriority="high" decoding="async">
+        <source type="image/webp" srcset="{prefix}assets/portrait-180.webp 180w, {prefix}assets/portrait-360.webp 360w, {prefix}assets/portrait-540.webp 540w" sizes="(max-width: 640px) 152px, (pointer: coarse) and (orientation: landscape) and (max-height: 500px) and (max-width: 960px) 152px, 180px">
+        <img class="portrait" src="{prefix}assets/portrait-360.jpg" alt="Maksim Bobrin by the sea" width="360" height="450" fetchpriority="high" decoding="async">
       </picture>
       <ul class="profiles" aria-label="Profiles">{profile_items}</ul>
       {sidebar_extra}
@@ -176,6 +180,30 @@ home = f'''
   </section>
 '''
 page('index.html','Home','index.html',home)
+
+blog_entries = ''
+for project in load_projects():
+    slug = project['slug']
+    published = date.fromisoformat(project['date'])
+    tags = ''.join(f'<span>{escape(tag)}</span>' for tag in project.get('tags', []))
+    blog_entries += f'''<li><article class="blog-entry" aria-labelledby="{slug}">
+      <div class="blog-meta"><time datetime="{project['date']}">{published.strftime('%d %b %Y')}</time><span class="blog-tags">{tags}</span></div>
+      <h2 id="{slug}"><a href="{slug}/">{escape(project['title'])}</a></h2>
+      <p>{escape(project['description'])}</p>
+      <a class="blog-open" href="{slug}/">Explore project <span aria-hidden="true">→</span><span class="sr-only">: {escape(project['title'])}</span></a>
+    </article></li>'''
+page('blog/index.html', 'Blog', 'blog/', f'''
+  <div class="subintro blog-intro"><h1 class="page-title">Blog</h1>
+    <p class="lede">Projects, experiments, and the ideas behind them.</p>
+  </div>
+  <section aria-label="Project websites"><ul class="blog-list">{blog_entries}</ul></section>
+  <section class="blog-archive" aria-labelledby="earlier-notes"><h2 id="earlier-notes">Earlier notes</h2>
+    <article><h3><a href="enot/">Fast neural optimal transport through expectile regularization</a></h3>
+      <p>The ideas behind ENOT: making neural optimal transport stable and fast.</p>
+      <a class="blog-open" href="enot/">Read article <span aria-hidden="true">→</span></a>
+    </article>
+  </section>
+''', page_description='Projects, experiments, and research notes by Maksim Bobrin.')
 
 page('research-interests.html','Research Interests','research-interests.html','''<div class="subintro"><h1 class="page-title">Research Interests</h1><p class="lede">My current work focuses on creativity in neural networks, continual learning, and adaptation.</p></div><section class="interest"><h2>Neural creativity</h2><div><p class="body-text">What would it take for a neural network to develop an idea that is both original and useful? One question is how to recognize a creative response when there are many good answers.</p></div></section><section class="interest"><h2>Continual learning</h2><p class="body-text">How can a model learn from a sequence of experiences while preserving what it will need again?</p></section><section class="interest"><h2>Adaptation</h2><p class="body-text">When the environment changes, how can a model tell which parts of its earlier experience still apply?</p></section>''')
 page('talks.html','Talks','talks.html','<div class="subintro"><h1 class="page-title">Talks</h1></div>\n<section class="talks-list" aria-labelledby="talks-2026">\n  <h2 class="year-title" id="talks-2026">2026</h2>\n  <article class="talk" aria-labelledby="optimal-transport">\n    <time class="talk-date" datetime="2026-11">November 2026</time>\n    <div class="talk-content">\n      <div class="talk-details">\n        <h3 id="optimal-transport"><span class="talk-topic">Optimal Transport:</span><span class="talk-title-detail">Matching, Generating and Beyond</span></h3>\n        <p class="talk-venue">ITMO University</p>\n        <div class="talk-resources">\n          <a href="assets/slides/generative-modelling-itmo-2026.pdf" target="_blank" rel="noopener">Slides <span class="file-info">PDF · 64 slides</span></a>\n          <a href="assets/slides/generative-modelling-itmo-2026.pdf" download>Download</a>\n        </div>\n      </div>\n      <a class="talk-thumbnail" href="assets/slides/generative-modelling-itmo-2026.pdf#page=2" target="_blank" rel="noopener" aria-label="Open the lecture map in the slides (PDF, page 2)">\n        <img src="assets/slides/lecture-map.png" width="1440" height="810" alt="Lecture map: optimal transport, Wasserstein geometry, computation, fluid dynamics, model alignment, generative transport, mixing and routing, Schrödinger bridges, and further directions.">\n        <span>Lecture map ↗</span>\n      </a>\n    </div>\n  </article>\n</section>')

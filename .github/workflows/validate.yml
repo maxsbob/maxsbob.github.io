@@ -12,9 +12,10 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
-      - name: Regenerate pages
-        run: python3 tools/build_pages.py
-      - name: Check local links and assets
-        run: python3 tools/check_site.py
+      - uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          version: '1.11.9'
+      - name: Build Quarto projects and check all published links
+        run: python3 tools/build_site.py
       - name: Check generated files are current
         run: git diff --exit-code -- '*.html'

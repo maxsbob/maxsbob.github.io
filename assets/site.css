@@ -289,6 +289,23 @@ summary::marker { font-size: .75em; }
 .talk-resources { display: flex; flex-wrap: wrap; gap: 10px 20px; align-items: baseline; margin-top: 12px; font-size: 1rem; }
 .talk-resources a { text-decoration: underline; text-underline-offset: .2em; }
 .file-info { margin-left: 5px; font-size: .8125rem; color: #39434b; }
+/* Project websites in the Blog */
+.blog-intro .lede { text-align: center; color: #39434b; }
+.blog-list { list-style: none; padding: 0; }
+.blog-entry { padding: 24px 0; border-block: 1px solid var(--line); }
+.blog-list li + li .blog-entry { border-top: 0; }
+.blog-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; margin-bottom: 10px; }
+.blog-meta time { font-size: .8125rem; color: #59636b; }
+.blog-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.blog-tags span { padding: 1px 7px; background: #f2f6fb; color: #245c94; border-radius: 4px; font-size: .75rem; }
+.blog-entry h2 { font-size: 1.4rem; line-height: 1.35; text-wrap: pretty; }
+.blog-entry h2 a { text-decoration: none; }
+.blog-entry h2 a:hover { color: #245c94; text-decoration: underline; }
+.blog-entry p, .blog-archive p { margin-top: 8px; color: #39434b; font-size: 1rem; }
+.blog-open { display: inline-flex; align-items: baseline; gap: 8px; margin-top: 14px; color: #245c94; font-size: .9375rem; text-decoration: underline; text-underline-offset: .2em; }
+.blog-archive { margin-top: 36px; }
+.blog-archive h2 { font-size: 1rem; color: #59636b; font-weight: 500; margin-bottom: 16px; }
+.blog-archive h3 { font-size: 1.125rem; }
 [hidden] { display: none !important; }
 @media (max-width: 780px) {
   .layout { grid-template-columns: max-content minmax(0, 1fr); gap: 30px; width: calc(100% - 48px); }

@@ -1,0 +1,23 @@
+@font-face {
+  font-family: 'DM Sans';
+  src: url('/assets/dm-sans.woff2') format('woff2');
+  font-weight: 400 700;
+  font-display: swap;
+}
+:root { --bs-body-font-family: 'DM Sans', system-ui, sans-serif; --bs-link-color: #245c94; }
+body { color: #171b20; font-size: 1.0625rem; line-height: 1.65; }
+h1, h2, h3, .navbar-title { letter-spacing: -.025em; }
+h1.title { font-size: clamp(2rem, 4vw, 2.8rem); line-height: 1.12; font-weight: 650; }
+.navbar { border-bottom: 1px solid #dedede; }
+.navbar-title { font-size: 1.125rem; font-weight: 650; }
+.navbar .nav-link, .sidebar-navigation .sidebar-item { font-size: .9375rem; }
+#title-block-header { margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid #dedede; }
+#title-block-header .description { color: #52616d; font-size: 1.125rem; margin-top: 1rem; }
+main a { text-underline-offset: .18em; }
+h2 { margin-top: 2.2rem; font-size: 1.5rem; }
+.project-label { color: #a94929; font-size: .8125rem; font-weight: 650; letter-spacing: .07em; text-transform: uppercase; }
+.callout { border-radius: 4px; }
+.callout.callout-style-simple { border-left-color: #245c94; background: #f6f9fc; }
+pre { font-size: .875rem; }
+.nav-footer { border-top: 1px solid #dedede; }
+@media (max-width: 767px) { body { font-size: 1rem; } }
