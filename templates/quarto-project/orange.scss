@@ -1,0 +1,19 @@
+/*-- scss:defaults --*/
+$primary: #b64a12;
+$secondary: #745442;
+$link-color: #ad450e;
+$link-hover-color: #7d2f08;
+$navbar-bg: #fff3e8;
+$navbar-fg: #6b3015;
+$navbar-hl: #a8410d;
+$sidebar-hl: $link-color;
+$toc-color: $link-color;
+$toc-active-border: #ce6b28;
+$callout-color-note: #cf6b26;
+$code-bg: #fff5eb;
+$code-color: #984010;
+$code-block-bg: #fffaf6;
+$border-color: #eadbd1;
+
+/*-- scss:rules --*/
+.navbar { border-bottom: 1px solid #edc8a9; }

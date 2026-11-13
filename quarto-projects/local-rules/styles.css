@@ -1,5 +1,5 @@
 /* Tutorial layout inspired by https://tutorial.amemory.net/.
-   The Flatly theme supplies the palette, controls, and code colors. */
+   Flatly and orange.scss supply the palette, controls, and code colors. */
 @font-face {
   font-family: 'DM Sans';
   src: url('assets/dm-sans.woff2') format('woff2');
@@ -18,7 +18,7 @@ h1.title { font-size: clamp(1.8rem, 3vw, 2.15rem); font-weight: 700; line-height
 #title-block-header .description {
   margin-top: .8rem;
   padding: .65rem 0 .65rem 1rem;
-  border-left: 4px solid var(--bs-border-color);
+  border-left: 4px solid #edc8a9;
   color: var(--bs-secondary-color);
   font-size: 1.1rem;
 }
@@ -26,12 +26,12 @@ h2 { margin-top: 2rem; font-weight: 650; }
 h3 { font-weight: 600; }
 main a { text-underline-offset: .15em; }
 blockquote { border-left-width: 4px; }
-.project-label { color: var(--bs-secondary-color); font-size: .75rem; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; }
+.project-label { color: #a8410d; font-size: .75rem; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; }
 .cell { margin-bottom: 1rem; }
 .cell-output-stdout pre {
   margin: 0 0 1.5rem .75rem;
   padding: .6rem 1rem;
-  border-left: 2px solid #e7a181;
+  border-left: 2px solid #ce6b28;
   border-radius: 0;
   background: transparent;
 }

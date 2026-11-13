@@ -35,7 +35,8 @@ The command copies `templates/quarto-project/` into
 | `index.qmd` | Project overview |
 | `experiment.qmd` | Methods, code, and results |
 | `notes.qmd` | Limitations, references, and open questions |
-| `styles.css` | Project-specific appearance |
+| `styles.css` | Project-specific layout and typography |
+| `orange.scss` | Orange palette for navigation, links, callouts, and code |
 
 Edit the QMD pages and metadata. If you rename a project, also update its
 `site-url` in `_quarto.yml`. Add more QMD pages to the sidebar's `contents`
@@ -47,14 +48,16 @@ date, newest first. There is no separate list or workflow to update.
 
 The template follows the tutorial layout of the
 [Associative Memory Tutorial](https://github.com/bhoov/amtutorial/blob/main/nbs/index.qmd):
-The light Flatly theme, a dark navigation bar, floating chapter navigation,
+The light Flatly theme with orange accents, a pale orange navigation bar,
+floating chapter navigation,
 a right-side table of contents, author metadata, a quoted subtitle, collapsible
 callouts, search, and previous/next page links. It keeps the site's local DM
 Sans font, included in each project with its license. Pages use a white
 background and have no dark-mode toggle.
 
 Change the author in `_quarto.yml` when needed. `styles.css` contains the
-small layout adjustments shared by new projects; the rest comes from Quarto.
+small layout adjustments shared by new projects; `orange.scss` defines the
+orange palette. The rest comes from Quarto.
 
 ## Preview and check
 

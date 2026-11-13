@@ -197,12 +197,6 @@ page('blog/index.html', 'Blog', 'blog/', f'''
     <p class="lede">Projects, experiments, and the ideas behind them.</p>
   </div>
   <section aria-label="Project websites"><ul class="blog-list">{blog_entries}</ul></section>
-  <section class="blog-archive" aria-labelledby="earlier-notes"><h2 id="earlier-notes">Earlier notes</h2>
-    <article><h3><a href="enot/">Fast neural optimal transport through expectile regularization</a></h3>
-      <p>The ideas behind ENOT: making neural optimal transport stable and fast.</p>
-      <a class="blog-open" href="enot/">Read article <span aria-hidden="true">→</span></a>
-    </article>
-  </section>
 ''', page_description='Projects, experiments, and research notes by Maksim Bobrin.')
 
 page('research-interests.html','Research Interests','research-interests.html','''<div class="subintro"><h1 class="page-title">Research Interests</h1><p class="lede">My current work focuses on creativity in neural networks, continual learning, and adaptation.</p></div><section class="interest"><h2>Neural creativity</h2><div><p class="body-text">What would it take for a neural network to develop an idea that is both original and useful? One question is how to recognize a creative response when there are many good answers.</p></div></section><section class="interest"><h2>Continual learning</h2><p class="body-text">How can a model learn from a sequence of experiences while preserving what it will need again?</p></section><section class="interest"><h2>Adaptation</h2><p class="body-text">When the environment changes, how can a model tell which parts of its earlier experience still apply?</p></section>''')

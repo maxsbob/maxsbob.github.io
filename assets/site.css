@@ -301,11 +301,8 @@ summary::marker { font-size: .75em; }
 .blog-entry h2 { font-size: 1.4rem; line-height: 1.35; text-wrap: pretty; }
 .blog-entry h2 a { text-decoration: none; }
 .blog-entry h2 a:hover { color: #245c94; text-decoration: underline; }
-.blog-entry p, .blog-archive p { margin-top: 8px; color: #39434b; font-size: 1rem; }
+.blog-entry p { margin-top: 8px; color: #39434b; font-size: 1rem; }
 .blog-open { display: inline-flex; align-items: baseline; gap: 8px; margin-top: 14px; color: #245c94; font-size: .9375rem; text-decoration: underline; text-underline-offset: .2em; }
-.blog-archive { margin-top: 36px; }
-.blog-archive h2 { font-size: 1rem; color: #59636b; font-weight: 500; margin-bottom: 16px; }
-.blog-archive h3 { font-size: 1.125rem; }
 [hidden] { display: none !important; }
 @media (max-width: 780px) {
   .layout { grid-template-columns: max-content minmax(0, 1fr); gap: 30px; width: calc(100% - 48px); }
