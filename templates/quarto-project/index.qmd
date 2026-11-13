@@ -17,7 +17,7 @@ would a useful answer tell us?
 Describe the approach in plain language. Add equations, figures, citations,
 or a short code example where they help explain the idea.
 
-::: {.callout-note appearance="simple" title="At a glance"}
+::: {.callout-note collapse="true" title="At a glance"}
 Replace this block with the main observation from the project.
 :::
 

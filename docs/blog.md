@@ -43,6 +43,19 @@ in that file. Keep `project.output-dir: _site`, which the build expects.
 The Blog index discovers project folders automatically and sorts them by
 date, newest first. There is no separate list or workflow to update.
 
+## Project page style
+
+The template follows the tutorial layout of the
+[Associative Memory Tutorial](https://github.com/bhoov/amtutorial/blob/main/nbs/index.qmd):
+The light Flatly theme, a dark navigation bar, floating chapter navigation,
+a right-side table of contents, author metadata, a quoted subtitle, collapsible
+callouts, search, and previous/next page links. It keeps the site's local DM
+Sans font, included in each project with its license. Pages use a white
+background and have no dark-mode toggle.
+
+Change the author in `_quarto.yml` when needed. `styles.css` contains the
+small layout adjustments shared by new projects; the rest comes from Quarto.
+
 ## Preview and check
 
 For a quick preview of one project with automatic reload:
@@ -51,8 +64,9 @@ For a quick preview of one project with automatic reload:
 quarto preview quarto-projects/my-project
 ```
 
-The shared font and links back to the main site are available in the full
-site preview. Build and serve everything before publishing:
+The project includes its font and assets for standalone previews. Use the
+full-site preview to check the Blog list and links to the rest of the site.
+Build and serve everything before publishing:
 
 ```sh
 python3 tools/build_site.py

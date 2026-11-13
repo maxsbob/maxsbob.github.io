@@ -3,24 +3,33 @@ project:
   output-dir: _site
   resources:
     - "!project.json"
+    - "assets/"
 
 website:
   title: "A small world of local rules"
   description: "A tiny cellular automaton as a project notebook: the question, a reproducible experiment, and observations about emergent patterns."
   site-url: https://maxsbob.github.io/blog/local-rules/
-  search: false
+  page-navigation: true
+  bread-crumbs: false
+  search:
+    location: navbar
+    type: overlay
   navbar:
-    title: false
-    background: light
-    left:
+    title: "A small world of local rules"
+    background: primary
+    right:
       - text: Home
         href: https://maxsbob.github.io/
       - text: Talks
         href: https://maxsbob.github.io/talks.html
       - text: Blog
         href: https://maxsbob.github.io/blog/
+    tools:
+      - icon: github
+        text: Project source
+        href: https://github.com/maxsbob/maxsbob.github.io/tree/main/quarto-projects/local-rules
   sidebar:
-    style: docked
+    style: floating
     title: "Project"
     contents:
       - href: index.qmd
@@ -34,14 +43,24 @@ website:
 
 format:
   html:
-    theme: cosmo
+    page-layout: full
+    theme: flatly
+    grid:
+      sidebar-width: 250px
+      body-width: 700px
+      margin-width: 250px
+      gutter-width: 1.5rem
     css: styles.css
     toc: true
     toc-title: "On this page"
     code-copy: true
     link-external-newwindow: true
     highlight-style: github
+    mainfont: "DM Sans"
     lang: en
+
+author:
+  - name: Maksim Bobrin
 
 # Code examples are displayed without requiring Python/R packages in CI.
 # See docs/blog.md before enabling executable cells.

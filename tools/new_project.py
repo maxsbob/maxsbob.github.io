@@ -26,7 +26,7 @@ def main():
         parser.error(f"Project already exists: {args.slug}")
     shutil.copytree(ROOT / "templates/quarto-project", destination)
     for path in destination.rglob("*"):
-        if path.is_file():
+        if path.is_file() and path.suffix in {".qmd", ".yml", ".css"}:
             content = path.read_text()
             content = content.replace("__TITLE_YAML__", json.dumps(args.title, ensure_ascii=False))
             content = content.replace("__DESCRIPTION_YAML__", json.dumps(args.description, ensure_ascii=False))

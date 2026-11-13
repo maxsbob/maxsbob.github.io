@@ -48,6 +48,16 @@ for name, initial in seeds.items():
     print(name, counts, shift, live == initial)
 ```
 
+Expected output when running this snippet:
+
+::: {.cell-output-stdout}
+```text
+Block [4, 4, 4] (0, 0) True
+Blinker [3, 3, 3] (0, 0) True
+Glider [5, 5, 5] (2, 2) False
+```
+:::
+
 ## Observations
 
 | Seed | Live cells at step 0 | Step 4 | Step 8 | Displacement after 8 steps |
