@@ -3,6 +3,8 @@
 import shutil
 import subprocess
 import sys
+import hashlib
+import re
 from xml.etree import ElementTree as ET
 
 from blog import ROOT, load_projects
@@ -35,6 +37,17 @@ def build():
         subprocess.run([quarto, "render", str(source)], check=True)
         if not (rendered / "index.html").is_file():
             raise ValueError(f"{source.name}: Quarto must render to _site/index.html")
+        # Quarto hashes its compiled theme, but custom CSS needs a version too.
+        # This lets readers see style edits without clearing their browser cache.
+        stylesheet = rendered / "styles.css"
+        if stylesheet.is_file():
+            version = hashlib.sha256(stylesheet.read_bytes()).hexdigest()[:12]
+            for html in rendered.rglob("*.html"):
+                html.write_text(re.sub(
+                    r'href="((?:\./|\.\./)*styles\.css)"',
+                    lambda match: f'href="{match[1]}?v={version}"',
+                    html.read_text(),
+                ))
         shutil.copytree(rendered, destination / "blog" / project["slug"])
 
         # Include all project pages in the site's sitemap, including subpages.
