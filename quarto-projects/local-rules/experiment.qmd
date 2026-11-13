@@ -60,11 +60,15 @@ Glider [5, 5, 5] (2, 2) False
 
 ## Observations
 
+::: {.table-responsive role="region" aria-label="Simulation observations" tabindex="0"}
+
 | Seed | Live cells at step 0 | Step 4 | Step 8 | Displacement after 8 steps |
 |:--|--:|--:|--:|:--|
 | Block | 4 | 4 | 4 | (0, 0) |
 | Blinker | 3 | 3 | 3 | (0, 0) |
 | Glider | 5 | 5 | 5 | (2, 2) |
+
+:::
 
 Displacement here means the change in the minimum x and y coordinates of
 the live cells. It is useful for these repeating seeds; it is not a general
