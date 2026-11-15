@@ -171,6 +171,18 @@ h3 { font-size: 1.1875rem; font-weight: 650; }
 .column { min-width: 0; }
 main > section + section { margin-top: 28px; }
 .bio p, .lede { margin-top: 7px; max-width: 70ch; }
+.contact-note {
+  margin-top: 18px;
+  padding: 14px 18px;
+  border: 1px solid #edc8a9;
+  border-left: 3px solid #c3662b;
+  border-radius: 4px;
+  background: #fff8f2;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+.bio .contact-note p { margin: 0; }
+.contact-note a { color: #a8410d; font-weight: 600; }
 .updates { list-style: none; padding: 0; margin-top: 8px; }
 .updates li { display: grid; grid-template-columns: 4.85em 1fr; align-items: baseline; gap: 12px; margin: 9px 0; }
 time, .meta, .sample { color: var(--ink); font-size: 1rem; }

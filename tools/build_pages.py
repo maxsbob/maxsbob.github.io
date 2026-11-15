@@ -167,6 +167,9 @@ home = f'''
     <p>I’m currently a PhD student. I hold bachelor’s and master’s degrees in mathematics from <a href="https://www.hse.ru/en/ma/sltheory/">HSE University</a>.</p>
     <p>I explore open-ended questions in neural creativity, learning, and adaptation, often following unusual ideas before knowing where they will lead. I’m especially interested in emergent complexity: how simple local rules give rise to rich systems and behaviors without a prescribed goal.</p>
     <p>I see intelligence as the ability to draw on prior experience and adapt to the unfamiliar. Curiosity and unexpected connections across fields guide my research.</p>
+    <aside class="contact-note" aria-label="Get in touch and explore">
+      <p>Feel free to contact me and look at my recent <a href="talks.html">lectures</a> &amp; <a href="blog/">Blog</a>.</p>
+    </aside>
   </section>
   <section id="updates" aria-labelledby="latest">
     <h2 id="latest" class="section-title updates-title">Latest Updates</h2>
