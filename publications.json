@@ -266,6 +266,10 @@
     "summary": "An asymmetric loss couples the two transport potentials during training, removing the need for a costly inner optimization.",
     "links": [
       [
+        "Project",
+        "https://maxsbob.github.io/enot/"
+      ],
+      [
         "Slides",
         "https://neurips.cc/media/neurips-2024/Slides/96684_uqR9Gw5.pdf"
       ],
